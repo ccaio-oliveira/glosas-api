@@ -15,5 +15,22 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->statefulApi();
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        //
+        $exceptions->report(function (\Throwable $e) {
+            if (app()->environment('testing')) {
+                return;
+            }
+
+            try {
+                \App\Models\ErrorLog::log(
+                    category: 'general',
+                    message: $e->getMessage(),
+                    source: get_class($e),
+                    context: ['trace' => $e->getTraceAsString()],
+                    severity: 'critical',
+                    clinicId: auth()->check() ? auth()->user()->clinic_id : null
+                );
+            } catch (\Throwable) {
+                // evita que uma falha ao logar o erro derrube a aplicação
+            }
+        });
     })->create();
