@@ -15,11 +15,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $clinic = \App\Models\Clinic::create([
+            'name' => 'Clínica Exemplo',
+            'cnpj' => '12345678000199',
+            'current_plan' => 'professional',
+            'status' => 'active',
+        ]);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        \App\Models\User::factory()->create([
+            'name' => 'Dra. Ana Silva',
+            'email' => 'ana@clinica-exemplo.com',
+            'password' => bcrypt('password'),
+            'clinic_id' => $clinic->id,
+            'role' => 'owner',
         ]);
 
         $this->call(DenialReasonCodeSeeder::class);
