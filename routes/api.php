@@ -11,6 +11,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/user', [AuthController::class, 'me']);
 
-    Route::apiResource('payers', PayerController::class);
+    Route::apiResource('payers', PayerController::class)
+        ->only(['index', 'store', 'update', 'destroy'])
+        ->parameters(['payers' => 'clinicPayer']);
+
     Route::apiResource('claims', ClaimController::class);
 });

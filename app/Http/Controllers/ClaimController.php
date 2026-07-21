@@ -44,7 +44,7 @@ class ClaimController extends Controller
         return $request->validate([
             'payer_id' => [
                 'required',
-                Rule::exists('payers', 'id')->where(fn ($query) => $query->where('clinic_id', $request->user()->clinic_id)),
+                Rule::exists('clinic_payers', 'payer_id')->where(fn ($query) => $query->where('clinic_id', $request->user()->clinic_id)),
             ],
             'claim_number' => ['required', 'string', 'max:255'],
             'patient_name' => ['required', 'string', 'max:255'],

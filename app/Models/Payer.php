@@ -2,28 +2,22 @@
 
 namespace App\Models;
 
-use App\Models\Concerns\BelongsToClinic;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Payer extends Model
 {
-    use HasFactory, BelongsToClinic;
+    use HasFactory;
 
-    protected $fillable = ['clinic_id', 'name', 'ans_registry_code', 'integration_type', 'config'];
-
-    protected function casts(): array
-    {
-        return ['config' => 'array'];
-    }
+    protected $fillable = ['name', 'ans_registry_code'];
 
     public function claims()
     {
         return $this->hasMany(Claim::class);
     }
 
-    public function knowledgeBaseEntries()
+    public function clinicPayers()
     {
-        return $this->hasMany(KnowledgeBaseEntry::class);
+        return $this->hasMany(ClinicPayer::class);
     }
 }

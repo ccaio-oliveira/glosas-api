@@ -13,11 +13,8 @@ return new class extends Migration
     {
         Schema::create('payers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('clinic_id')->constrained('clinics')->cascadeOnDelete();
             $table->string('name');
             $table->string('ans_registry_code')->nullable();
-            $table->string('integration_type')->default('manual'); // manual|tiss_webservice
-            $table->json('config')->nullable(); // endpoint, credentials, etc
             $table->timestamps();
         });
     }
