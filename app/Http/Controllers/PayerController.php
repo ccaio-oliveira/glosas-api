@@ -40,11 +40,6 @@ class PayerController extends Controller
         return $this->present($link->load('payer'));
     }
 
-    public function show(Payer $payer)
-    {
-        return $payer;
-    }
-
     public function update(Request $request, ClinicPayer $clinicPayer)
     {
         $data = $request->validate([

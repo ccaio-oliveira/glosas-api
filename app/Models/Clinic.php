@@ -9,7 +9,7 @@ class Clinic extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'cnpj', 'current_plan', 'status'];
+    protected $fillable = ['name', 'cnpj', 'cro', 'phone', 'email', 'address', 'current_plan', 'status'];
 
     public function users()
     {
