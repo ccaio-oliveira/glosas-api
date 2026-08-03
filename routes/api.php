@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ClaimController;
 use App\Http\Controllers\ClinicController;
 use App\Http\Controllers\PayerController;
+use App\Http\Controllers\TissUploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +25,7 @@ Route::middleware('auth:sanctum')->group(function () {
         ->parameters(['payers' => 'clinicPayer']);
 
     Route::apiResource('claims', ClaimController::class);
+
+    Route::get('/tiss-uploads', [TissUploadController::class, 'index']);
+    Route::post('/tiss-uploads', [TissUploadController::class, 'store']);
 });

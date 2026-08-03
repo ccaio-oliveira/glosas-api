@@ -13,19 +13,13 @@ class DenialReasonCodeSeeder extends Seeder
      */
     public function run(): void
     {
-        $codes = [
-            ['code' => '01', 'description' => 'Falta de autorização prévia', 'category' => 'administrative'],
-            ['code' => '02', 'description' => 'Beneficiário fora de cobertura/carência', 'category' => 'administrative'],
-            ['code' => '03', 'description' => 'Documentação incompleta ou divergente', 'category' => 'administrative'],
-            ['code' => '10', 'description' => 'Procedimento não coberto pelo contrato', 'category' => 'technical'],
-            ['code' => '11', 'description' => 'Incompatibilidade entre procedimento e CID', 'category' => 'technical'],
-            ['code' => '12', 'description' => 'Material/medicamento não compatível com o procedimento', 'category' => 'technical'],
-            ['code' => '20', 'description' => 'Valor cobrado divergente da tabela contratada', 'category' => 'linear'],
-            ['code' => '21', 'description' => 'Quantidade cobrada acima do limite contratual', 'category' => 'linear'],
-        ];
+        $path = database_path('data/denial_reason_codes.json');
+        $codes = json_decode(file_get_contents($path), true);
 
-        foreach ($codes as $code) {
-            DenialReasonCode::updateOrCreate(['code' => $code['code']], $code);
+        foreach (array_chunk($codes, 200) as $chunk) {
+            DenialReasonCode::upsert($chunk, ['code'], ['description', 'category', 'tiss_group', 'tiss_group_label']);
         }
+
+        $this->command->info(count($codes).' códigos de glosa da Tabela 38 carregados.');
     }
 }

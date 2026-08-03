@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('denials', function (Blueprint $table) {
-            $table->foreignId('clinic_id')->after('id')->constrained('clinics')->cascadeOnDelete();
+        Schema::table('claims', function (Blueprint $table) {
+            $table->foreignId('tiss_upload_id')->nullable()->after('payer_id')->constrained('tiss_uploads')->nullOnDelete();
         });
     }
 
@@ -21,9 +21,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('denials', function (Blueprint $table) {
-            $table->dropForeign(['clinic_id']);
-            $table->dropColumn('clinic_id');
+        Schema::table('claims', function (Blueprint $table) {
+            $table->dropForeign(['tiss_upload_id']);
+            $table->dropColumn('tiss_upload_id');
         });
     }
 };

@@ -10,7 +10,7 @@ class Claim extends Model
 {
     use HasFactory, BelongsToClinic;
 
-    protected $fillable = ['clinic_id', 'payer_id', 'claim_number', 'patient_name', 'xml_path', 'total_amount', 'status'];
+    protected $fillable = ['clinic_id', 'payer_id', 'tiss_upload_id', 'claim_number', 'patient_name', 'xml_path', 'total_amount', 'status'];
 
     public function payer()
     {

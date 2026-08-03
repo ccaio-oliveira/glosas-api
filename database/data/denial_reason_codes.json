@@ -1,0 +1,4223 @@
+[
+  {
+    "code": "1001",
+    "description": "Número da carteira inválido",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1002",
+    "description": "Número do cartão nacional de saúde inválido",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1003",
+    "description": "A admissão do beneficiário no prestador ocorreu antes da inclusão do beneficiário na operadora",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1004",
+    "description": "Solicitação anterior À inclusão do beneficiário",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1005",
+    "description": "Atendimento anterior À inclusão do beneficiário",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1006",
+    "description": "Atendimento após O desligamento do beneficiário",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1007",
+    "description": "Atendimento dentro da carência do beneficiário",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1008",
+    "description": "Assinatura divergente",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1009",
+    "description": "Beneficiário com pagamento em aberto",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1010",
+    "description": "Assinatura do titular / responsável inexistente",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1011",
+    "description": "Identificação do beneficiário não consistente",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1012",
+    "description": "Serviço profissional hospitalar não É coberto pelo plano do beneficiário",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1013",
+    "description": "Cadastro do beneficiário com problemas",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1014",
+    "description": "Beneficiário com data de exclusão",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1015",
+    "description": "Idade do beneficiário acima idade limite",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1016",
+    "description": "Beneficiário com atendimento suspenso",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1017",
+    "description": "Data validade da carteira vencida",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1018",
+    "description": "Empresa do beneficiário suspensa / excluída",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1019",
+    "description": "Família do beneficiário com atendimento suspenso",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1020",
+    "description": "Via de cartão do beneficiário cancelada",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1021",
+    "description": "Via de cartão do beneficiário não liberada",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1022",
+    "description": "Via de cartão do beneficiário não compatível",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1023",
+    "description": "Nome do titular inválido",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1024",
+    "description": "Plano não existente",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1025",
+    "description": "Beneficiário não possui cobertura para assistência odontológica",
+    "category": "administrative",
+    "tiss_group": "elegibilidade",
+    "tiss_group_label": "Elegibilidade"
+  },
+  {
+    "code": "1101",
+    "description": "Quantidade de guias informadas no protocolo diferente das cadastradas",
+    "category": "administrative",
+    "tiss_group": "protocolo",
+    "tiss_group_label": "Protocolo"
+  },
+  {
+    "code": "1102",
+    "description": "Protocolo É de re-apresentação",
+    "category": "administrative",
+    "tiss_group": "protocolo",
+    "tiss_group_label": "Protocolo"
+  },
+  {
+    "code": "1103",
+    "description": "Protocolo não É de reapresentação",
+    "category": "administrative",
+    "tiss_group": "protocolo",
+    "tiss_group_label": "Protocolo"
+  },
+  {
+    "code": "1104",
+    "description": "Valor total do protocolo diferente do valor total das guias",
+    "category": "administrative",
+    "tiss_group": "protocolo",
+    "tiss_group_label": "Protocolo"
+  },
+  {
+    "code": "1201",
+    "description": "Atendimento fora da vigência do contrato com O credenciado",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1202",
+    "description": "Número do CNES inválido",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1203",
+    "description": "Código prestador inválido",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1204",
+    "description": "Admissão anterior À inclusão do credenciado na rede",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1205",
+    "description": "Admissão após O desligamento do credenciado da rede",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1206",
+    "description": "CPF / CNPJ inválido",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1207",
+    "description": "Credenciado não pertence À rede credenciada",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1208",
+    "description": "Solicitação anterior À inclusão do credenciado",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1209",
+    "description": "Solicitação após O desligamento do credenciado",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1210",
+    "description": "Solicitante credenciado não cadastrado",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1211",
+    "description": "Assinatura / carimbo do credenciado inexistente",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1212",
+    "description": "Atendimento / referência fora da vigência do contrato do prestador",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1213",
+    "description": "CBO (especialidade) inválido",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1214",
+    "description": "Credenciado não habilitado A realizar O procedimento",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1215",
+    "description": "Credenciado fora da abrangência geográfica do plano",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1216",
+    "description": "Especialidade não cadastrada",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1217",
+    "description": "Especialidade não cadastrada para O prestador",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1218",
+    "description": "Código de prestador incompativel com procedimento / exame cobrado",
+    "category": "administrative",
+    "tiss_group": "prestador",
+    "tiss_group_label": "Prestador"
+  },
+  {
+    "code": "1301",
+    "description": "Tipo guia inválido",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1302",
+    "description": "Código tipo guia principal E número guias incompatíveis",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1303",
+    "description": "Não existe O número guia principal informado",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1304",
+    "description": "Cobrança em guia indevida",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1305",
+    "description": "Item pago em outra guia",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1306",
+    "description": "Não existe número guia principal e/ou código guia principal",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1307",
+    "description": "Número da guia inválido",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1308",
+    "description": "Guia já apresentada",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1309",
+    "description": "Procedimento contratado não está de acordo com O tipo de guia utilizado",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1310",
+    "description": "Serviço do tipo cirúrgico E invasivo. equipe médica não informada na guia",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1311",
+    "description": "Prestador executante não informado",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1312",
+    "description": "Prestador contratado não informado",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1313",
+    "description": "Guia com rasura",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1314",
+    "description": "Guia sem assinatura e/ou carimbo do credenciado",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1315",
+    "description": "Guia sem data do ato cirúrgico",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1316",
+    "description": "Guia com local de atendimento preenchido incorretamente",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1317",
+    "description": "Guia sem data do atendimento",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1318",
+    "description": "Guia com código de serviço preenchido incorretamente",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1319",
+    "description": "Guia sem assinatura do assistido",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1320",
+    "description": "Identificação do assistido incompleta",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1321",
+    "description": "Validade da guia expirada",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1322",
+    "description": "Comprovante presencial ou GTO não enviado",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1323",
+    "description": "Data preenchida incorretamente",
+    "category": "administrative",
+    "tiss_group": "guia",
+    "tiss_group_label": "Guia"
+  },
+  {
+    "code": "1401",
+    "description": "Acomodação não autorizada",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1402",
+    "description": "Procedimento não autorizado",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1403",
+    "description": "Não existe informação sobre A senha de autorização do procedimento",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1404",
+    "description": "Não existe guia de autorização relacionada",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1405",
+    "description": "Data de validade da senha É anterior A data do atendimento",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1406",
+    "description": "Número da senha informado diferente do liberado",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1407",
+    "description": "Serviço solicitado não possui cobertura",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1408",
+    "description": "Quantidade serviço solicitada acima da autorizada",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1409",
+    "description": "Quantidade serviço solicitada acima coberta",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1410",
+    "description": "Serviço solicitado em carência",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1411",
+    "description": "Solicitante não informado",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1412",
+    "description": "Problemas no sistema autorizador",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1413",
+    "description": "Acomodação não possui cobertura",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1414",
+    "description": "Data de validade da senha expirada",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1415",
+    "description": "Procedimento não autorizado para O beneficiário",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1416",
+    "description": "Solicitante não cadastrado",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1417",
+    "description": "Solicitante não habilitado",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1418",
+    "description": "Solicitante suspenso",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1419",
+    "description": "Serviço solicitado já autorizado",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1420",
+    "description": "Serviço solicitado fora da cobertura",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1421",
+    "description": "Serviço solicitado É de pré-existência",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1422",
+    "description": "Especialidade não cadastrada para O solicitante",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1423",
+    "description": "Quantidade solicitada acima da quantidade permitida",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1424",
+    "description": "Quantidade autorizada acima da quantidade permitida",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1425",
+    "description": "Necessita pré-autorização da empresa",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1426",
+    "description": "Não autorizado pela auditoria",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1427",
+    "description": "Necessidade de auditoria médica",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1428",
+    "description": "Falta de autorização da empresa de conectividade",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1429",
+    "description": "CBO-S (especialidade) não autorizado A realizar O serviço",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1430",
+    "description": "Procedimento odontológico não autorizado",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1431",
+    "description": "Procedimento não autorizado na face solicitada",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1432",
+    "description": "Procedimento não autorizado para dente/região solicitada",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1433",
+    "description": "Procedimento não autorizado, dente ausente",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1434",
+    "description": "Cobrança de conta de CTI neonatal na senha do parto",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1435",
+    "description": "Vigência do acordo posterior À data de realização do procedimento",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1436",
+    "description": "Cancelamento do acordo anterior À data de realização do procedimento",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1437",
+    "description": "Senha de autorização cancelada",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1438",
+    "description": "Procedimento solicitado não autorizado por não atender A diretriz de utilização (DUT) do rol de procedimentos E eventos em saúde da ANS",
+    "category": "administrative",
+    "tiss_group": "autorizacao",
+    "tiss_group_label": "Autorização"
+  },
+  {
+    "code": "1501",
+    "description": "Tempo de evolução da doença inválido",
+    "category": "technical",
+    "tiss_group": "diagnostico",
+    "tiss_group_label": "Diagnóstico"
+  },
+  {
+    "code": "1502",
+    "description": "Tipo de doença inválido",
+    "category": "technical",
+    "tiss_group": "diagnostico",
+    "tiss_group_label": "Diagnóstico"
+  },
+  {
+    "code": "1503",
+    "description": "Indicador de acidente inválido",
+    "category": "technical",
+    "tiss_group": "diagnostico",
+    "tiss_group_label": "Diagnóstico"
+  },
+  {
+    "code": "1504",
+    "description": "Caráter de internação inválido",
+    "category": "technical",
+    "tiss_group": "diagnostico",
+    "tiss_group_label": "Diagnóstico"
+  },
+  {
+    "code": "1505",
+    "description": "Regime da internação inválido",
+    "category": "technical",
+    "tiss_group": "diagnostico",
+    "tiss_group_label": "Diagnóstico"
+  },
+  {
+    "code": "1506",
+    "description": "Tipo de internação inválido",
+    "category": "technical",
+    "tiss_group": "diagnostico",
+    "tiss_group_label": "Diagnóstico"
+  },
+  {
+    "code": "1507",
+    "description": "Urgência/emergência não aplicável",
+    "category": "technical",
+    "tiss_group": "diagnostico",
+    "tiss_group_label": "Diagnóstico"
+  },
+  {
+    "code": "1508",
+    "description": "Código CID não informado",
+    "category": "technical",
+    "tiss_group": "diagnostico",
+    "tiss_group_label": "Diagnóstico"
+  },
+  {
+    "code": "1509",
+    "description": "Código CID inválido",
+    "category": "technical",
+    "tiss_group": "diagnostico",
+    "tiss_group_label": "Diagnóstico"
+  },
+  {
+    "code": "1601",
+    "description": "Reincidência no atendimento",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1602",
+    "description": "Tipo de atendimento inválido ou não informado",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1603",
+    "description": "Tipo de consulta inválido",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1604",
+    "description": "Tipo de saída inválido",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1605",
+    "description": "Intervenção anterior A admissão",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1606",
+    "description": "Final da intervenção anterior ao início da intervenção",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1607",
+    "description": "Alta hospitalar anterior ao final da intervenção",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1608",
+    "description": "Alta anterior À data de internação",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1609",
+    "description": "Motivo saída inválido",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1610",
+    "description": "Óbito mulher inválido",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1611",
+    "description": "Intervenção anterior A internação",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1612",
+    "description": "Serviço não pode ser realizado no local especificado",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1613",
+    "description": "Consulta não autorizada",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1614",
+    "description": "Serviço ambulatorial não autorizado",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1615",
+    "description": "Internação não autorizada",
+    "category": "technical",
+    "tiss_group": "atendimento",
+    "tiss_group_label": "Atendimento"
+  },
+  {
+    "code": "1701",
+    "description": "Cobrança fora do prazo de validade",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1702",
+    "description": "Cobrança de procedimento em duplicidade",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1703",
+    "description": "Horário do atendimento não está na faixa de urgência/emergência",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1704",
+    "description": "Valor cobrado superior ao acordado em pacote",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1705",
+    "description": "Valor apresentado A maior",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1706",
+    "description": "Valor apresentado A menor",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1707",
+    "description": "Não existe informação sobre A tabela que será utilizada na valoração. verifique O contrato do prestador",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1708",
+    "description": "Não existe valor para O procedimento realizado",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1709",
+    "description": "Falta prescrição médica",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1710",
+    "description": "Falta visto da enfermagem",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1711",
+    "description": "Procedimento pertence A um pacote acordado E já cobrado",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1712",
+    "description": "Assinatura do médico responsável pelo exame inexistente",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1713",
+    "description": "Faturamento inválido",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1714",
+    "description": "Valor do serviço superior ao valor de tabela",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1715",
+    "description": "Valor do serviço inferior ao valor de tabela",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1716",
+    "description": "Percentual de redução/acréscimo fora dos valores definidos em tabela",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1717",
+    "description": "Pago conforme relatório de auditoria externa - conta inicial",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1718",
+    "description": "Reanálise negada, pago conforme relatório auditoria",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1719",
+    "description": "Reanálise negada, análise conforme tabela acordada",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1720",
+    "description": "Liberados 150% de vídeo, sem cobertura para adicional de acomodação",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1721",
+    "description": "Código cobrado substituído pelo código pago",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1722",
+    "description": "Pago conforme negociação",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1723",
+    "description": "Adicional de urgência não previsto para atendimento clínico",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1724",
+    "description": "Visita médica cobrada pela equipe cirúrgica incluída no período de 10 dias após realização do procedimento cirúrgico",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1725",
+    "description": "Valor pago A maior referente À taxa administrativa",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1726",
+    "description": "Valor apresentado A maior - plano individual",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1727",
+    "description": "Pago valor compativel com O procedimento",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1728",
+    "description": "Cobrança de material incluso no procedimento / exame realizado",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1729",
+    "description": "Cobrança de material com valor acima do permitido para procedimento/exame realizado",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1730",
+    "description": "Filme incluso no exame realizado",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1731",
+    "description": "Taxa incompativel para atendimento ambulatorial",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1732",
+    "description": "QT com data de evento divergente da liberada",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1733",
+    "description": "Recuperação de valores por pagamento indevido",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1734",
+    "description": "Cobrado conta aberta, pago O pacote conforme negociação",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1735",
+    "description": "Cobrança de pacote não negociado com O prestador",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1736",
+    "description": "Conta aguardando negociação para pagamento",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1737",
+    "description": "Diferença deve ser cobrada do beneficiário pelo prestador como franquia",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1738",
+    "description": "Documento fiscal não enviado",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1739",
+    "description": "Duplicidade de conta devido A periodo cobrado já efetuado em outra parcial",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1740",
+    "description": "Estorno do valor de procedimento pago",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1741",
+    "description": "Honorário ou procedimento já pago A outro prestador",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1742",
+    "description": "Honorário ou procedimento já pago por reembolso ao beneficiário",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1743",
+    "description": "Não há negociação para cobrança do kit, discriminar por itens",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1744",
+    "description": "Negociação diferenciada devido A liminar",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1745",
+    "description": "Pagamento da equipe conforme relatório do cirurgião",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1746",
+    "description": "Percentual de acréscimo diferente do negociado",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1747",
+    "description": "Plano do beneficiário E O tipo de acomodação não permitem acréscimo de honorários",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1748",
+    "description": "Procedimento não caracteriza urgência/emêrgencia",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1749",
+    "description": "Relatório de auditoria não enviado na conta",
+    "category": "linear",
+    "tiss_group": "cobranca",
+    "tiss_group_label": "Cobrança e valores"
+  },
+  {
+    "code": "1801",
+    "description": "Procedimento inválido",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1802",
+    "description": "Procedimento incompatível com O sexo do beneficiário",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1803",
+    "description": "Idade do beneficiário incompatível com O procedimento",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1804",
+    "description": "Número de dias liberados / sessões autorizadas não informadas",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1805",
+    "description": "Valor total do procedimento diferente do valor processado",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1806",
+    "description": "Quantidade de procedimento deve ser maior que zero",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1807",
+    "description": "Procedimentos médicos duplicados",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1808",
+    "description": "Procedimento não conforme com CID",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1809",
+    "description": "Cobrança de procedimento não executado",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1810",
+    "description": "Cobrança de procedimento não solicitado pelo médico",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1811",
+    "description": "Procedimento sem registro de execução",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1812",
+    "description": "Cobrança de procedimento não correlacionado ao relatório específico",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1813",
+    "description": "Cobrança de procedimento sem justificativa para realização ou com justificativa insuficiente",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1814",
+    "description": "Cobrança de procedimento com data de autorização posterior À do atendimento",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1816",
+    "description": "Cobrança de procedimento em quantidade incompatível com O procedimento/evolução clínica",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1817",
+    "description": "Cobrança de procedimento incluso no procedimento principal",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1818",
+    "description": "Cobrança de procedimento que exige autorização prévia",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1819",
+    "description": "Cobrança de procedimento com história clínica/hipótese diagnóstica não compatível",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1820",
+    "description": "Cobrança de procedimento em quantidade acima da máxima permitida/autorizada",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1821",
+    "description": "Cobrança de procedimento não compatível com A idade",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1822",
+    "description": "Cobrança de procedimento com ausência de resultado ou laudo técnico",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1823",
+    "description": "Procedimento realizado pelo mesmo profissional, na mesma especialidade, no prazo inferior ao estipulado sem justificativa adequada",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1824",
+    "description": "Procedimento cobrado não corresponde ao exame executado",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1825",
+    "description": "Cobrança de procedimento ambulatorial com data de autorização posterior À do atendimento",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1826",
+    "description": "Vias de acesso dos procedimentos cobrados não estão previstas na listagem de procedimentos múltiplos",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1827",
+    "description": "Cobrança de outro procedimento em outra guia, na mesma data, pelo mesmo profissional com mesmo grau de participação - liberado valor referente À via de acesso do procedimento secundário",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1828",
+    "description": "Adicional de urgência não previsto para procedimento cirúrgico eletivo",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1829",
+    "description": "Adicional de vídeo não previsto para O procedimento",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1830",
+    "description": "Cobrança de procedimento sem informação das datas de atendimento-visita, plantão, intensivista, avaliação enteral/parenteral",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1831",
+    "description": "Laudo do exame enviado não justifica A cobrança do procedimento",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1832",
+    "description": "Procedimento não permite cobrança de auxiliar de anestesista",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1833",
+    "description": "Procedimento cobrado não permite acréscimo de acomodação",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1834",
+    "description": "Porte anestésico cobrado incompatível com O porte do procedimento realizado",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1835",
+    "description": "\"analgesia por dia subsequente\" não justificada em relatório médico, para O procedimento realizado e/ou data do atendimento",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1836",
+    "description": "\"analgesia por dia subsequente\" incompatível com A via de administração do medicamento - VO ou IV periférica - sendo liberada visita hospitalar",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1837",
+    "description": "Não cabe pagamento do honorário integral por ser via de acesso cirúrgico diferente",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1838",
+    "description": "Grau de participação informado incompatível com evento cobrado",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1839",
+    "description": "Necessário envio do resultado do exame anátomo patológico",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1840",
+    "description": "Procedimento executado antes da autorização",
+    "category": "technical",
+    "tiss_group": "procedimento",
+    "tiss_group_label": "Procedimento"
+  },
+  {
+    "code": "1901",
+    "description": "Acomodação inválida",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1902",
+    "description": "Acomodação informada não está de acordo com acomodação contratada",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1903",
+    "description": "Permanência hospitalar incompatível com A evolução clínica",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1904",
+    "description": "Permanência hospitalar incompatível com O procedimento autorizado",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1905",
+    "description": "Quantidade de diárias deve ser maior que zero",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1906",
+    "description": "Acomodação não informada",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1907",
+    "description": "Quantidade UTI não prevista para procedimento",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1908",
+    "description": "Usuário não possui cobertura de UTI",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1910",
+    "description": "Cobrança de diárias em locais de acomodações diferentes, no mesmo dia",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1911",
+    "description": "Permanência hospitalar para investigação injustificada",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1912",
+    "description": "Evolução clínica não compatível com A permanência em UTI",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1913",
+    "description": "Código de diária incompatível com O local de atendimento",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1914",
+    "description": "Cobrança de diária em quantidade incompatível com A permanência hospitalar",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1915",
+    "description": "Mudança de acomodação sem comunicação ao paciente, familiar ou acompanhante, ou sem solicitação destes",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1916",
+    "description": "Cobrança de diárias de UTI incompatível com diagnóstico E evolução clínica",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1917",
+    "description": "Falta prorrogação para quantidade de diárias cobradas",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "1918",
+    "description": "Plano do beneficiário não contempla diária de acompanhante",
+    "category": "technical",
+    "tiss_group": "diaria",
+    "tiss_group_label": "Diária"
+  },
+  {
+    "code": "2001",
+    "description": "Material inválido",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2002",
+    "description": "Material sem cobertura para atendimento ambulatorial",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2003",
+    "description": "Material não especificado",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2004",
+    "description": "Material sem nota fiscal do fornecedor",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2005",
+    "description": "Quantidade de material deve ser maior que zero",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2006",
+    "description": "Material informado não coberto",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2007",
+    "description": "Cobrança de material em quantidade incompatível com A permanência",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2008",
+    "description": "Cobrança de material em quantidades incompatíveis com O procedimento realizado",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2009",
+    "description": "Quantidade de material superior A quantidade coberta",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2010",
+    "description": "Cobrança de materiais inclusos nas taxas",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2011",
+    "description": "Cobrança de material incluso no pacote negociado",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2012",
+    "description": "Cobrança de material incompatível com O relatório técnico",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2013",
+    "description": "Cobrança de material em permanência hospitalar não autorizada",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2014",
+    "description": "Cobrança de material não utilizado",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2015",
+    "description": "Material não autorizado",
+    "category": "technical",
+    "tiss_group": "material",
+    "tiss_group_label": "Material"
+  },
+  {
+    "code": "2101",
+    "description": "Medicamento inválido",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2102",
+    "description": "Medicamento sem cobertura para atendimento ambulatorial",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2103",
+    "description": "Medicamento não especificado",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2104",
+    "description": "Medicamento sem nota fiscal do fornecedor",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2105",
+    "description": "Quantidade de medicamentos deve ser maior que zero",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2106",
+    "description": "Medicamento informado não coberto",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2107",
+    "description": "Cobrança de medicamento em quantidade incompatível com A permanência",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2108",
+    "description": "Cobrança de medicamento em quantidades incompatíveis com O procedimento realizado",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2109",
+    "description": "Quantidade de medicamento superior A quantidade coberta",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2110",
+    "description": "Cobrança de medicamento inclusos nas taxas",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2111",
+    "description": "Cobrança de medicamento incluso no pacote negociado",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2112",
+    "description": "Cobrança de medicamento incompatível com O relatório técnico",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2113",
+    "description": "Cobrança de medicamento em permanência hospitalar não autorizada",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2114",
+    "description": "Cobrança de medicamento não utilizado",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2115",
+    "description": "Medicamento não autorizado",
+    "category": "technical",
+    "tiss_group": "medicamento",
+    "tiss_group_label": "Medicamento"
+  },
+  {
+    "code": "2201",
+    "description": "OPME inválido",
+    "category": "technical",
+    "tiss_group": "opm",
+    "tiss_group_label": "OPM"
+  },
+  {
+    "code": "2202",
+    "description": "OPME sem cobertura para atendimento ambulatorial",
+    "category": "technical",
+    "tiss_group": "opm",
+    "tiss_group_label": "OPM"
+  },
+  {
+    "code": "2203",
+    "description": "OPME sem nota fiscal do fornecedor",
+    "category": "technical",
+    "tiss_group": "opm",
+    "tiss_group_label": "OPM"
+  },
+  {
+    "code": "2204",
+    "description": "Quantidade de OPME deve ser maior que zero",
+    "category": "technical",
+    "tiss_group": "opm",
+    "tiss_group_label": "OPM"
+  },
+  {
+    "code": "2205",
+    "description": "OPME informado não coberto",
+    "category": "technical",
+    "tiss_group": "opm",
+    "tiss_group_label": "OPM"
+  },
+  {
+    "code": "2206",
+    "description": "OPME informado não autorizado",
+    "category": "technical",
+    "tiss_group": "opm",
+    "tiss_group_label": "OPM"
+  },
+  {
+    "code": "2207",
+    "description": "Cobrança de OPME não utilizado",
+    "category": "technical",
+    "tiss_group": "opm",
+    "tiss_group_label": "OPM"
+  },
+  {
+    "code": "2208",
+    "description": "Cobrança de OPME no item material E medicamentos",
+    "category": "technical",
+    "tiss_group": "opm",
+    "tiss_group_label": "OPM"
+  },
+  {
+    "code": "2209",
+    "description": "Cobrança de OPME em desacordo com relatório técnico",
+    "category": "technical",
+    "tiss_group": "opm",
+    "tiss_group_label": "OPM"
+  },
+  {
+    "code": "2210",
+    "description": "Cobrança de OPME em quantidade incompatível com O procedimento realizado",
+    "category": "technical",
+    "tiss_group": "opm",
+    "tiss_group_label": "OPM"
+  },
+  {
+    "code": "2211",
+    "description": "Cobrança de OPME inclusa no pacote negociado",
+    "category": "technical",
+    "tiss_group": "opm",
+    "tiss_group_label": "OPM"
+  },
+  {
+    "code": "2212",
+    "description": "OPME em desacordo com os critérios técnicos adotados pela operadora",
+    "category": "technical",
+    "tiss_group": "opm",
+    "tiss_group_label": "OPM"
+  },
+  {
+    "code": "2213",
+    "description": "OPME pago A fornecedor terceirizado",
+    "category": "technical",
+    "tiss_group": "opm",
+    "tiss_group_label": "OPM"
+  },
+  {
+    "code": "2301",
+    "description": "Gases medicinais inválidos",
+    "category": "technical",
+    "tiss_group": "gases_medicinais",
+    "tiss_group_label": "Gases medicinais"
+  },
+  {
+    "code": "2302",
+    "description": "Cobrança de oxigenoterapia sem prescrição médica",
+    "category": "technical",
+    "tiss_group": "gases_medicinais",
+    "tiss_group_label": "Gases medicinais"
+  },
+  {
+    "code": "2303",
+    "description": "Cobrança de oxigenoterapia com quantitativo de uso em divergência/pago valor corrigido",
+    "category": "technical",
+    "tiss_group": "gases_medicinais",
+    "tiss_group_label": "Gases medicinais"
+  },
+  {
+    "code": "2304",
+    "description": "Cobrança de oxigênio incluso na taxa de nebuliz ação especificada",
+    "category": "technical",
+    "tiss_group": "gases_medicinais",
+    "tiss_group_label": "Gases medicinais"
+  },
+  {
+    "code": "2305",
+    "description": "Cobrança de oxigenoterapia em uso prolongado sem justificativa de uso",
+    "category": "technical",
+    "tiss_group": "gases_medicinais",
+    "tiss_group_label": "Gases medicinais"
+  },
+  {
+    "code": "2306",
+    "description": "Cobrança de oxigenoterapia sem registro de controle de uso (entrada E saída)",
+    "category": "technical",
+    "tiss_group": "gases_medicinais",
+    "tiss_group_label": "Gases medicinais"
+  },
+  {
+    "code": "2307",
+    "description": "Cobrança de gases em quantidade superior ao período de permanência",
+    "category": "technical",
+    "tiss_group": "gases_medicinais",
+    "tiss_group_label": "Gases medicinais"
+  },
+  {
+    "code": "2308",
+    "description": "Cobrança de co2 nas cirurgias videolaparoscópicas durante toda A realização do procedimento (início ao fim)",
+    "category": "technical",
+    "tiss_group": "gases_medicinais",
+    "tiss_group_label": "Gases medicinais"
+  },
+  {
+    "code": "2309",
+    "description": "Cobrança de ar comprimido sem registro no boletim anestésico E duração de uso",
+    "category": "technical",
+    "tiss_group": "gases_medicinais",
+    "tiss_group_label": "Gases medicinais"
+  },
+  {
+    "code": "2310",
+    "description": "Cobrança de gases incompatível com O utilizado/ prescrito",
+    "category": "technical",
+    "tiss_group": "gases_medicinais",
+    "tiss_group_label": "Gases medicinais"
+  },
+  {
+    "code": "2401",
+    "description": "Taxa / aluguel inválido",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2402",
+    "description": "Cobrança de taxa por uso de equipamento incompatível com O procedimento realizado/uso previsto no procedimento",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2403",
+    "description": "Cobrança de taxa de uso de bomba de infusão em paciente internado na UTI",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2404",
+    "description": "Cobrança de outras taxas associadas/inclusas na cobrança da taxa de sala prevista",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2405",
+    "description": "Cobrança de mais de uma taxa de sala de cirurgia, por conta do número de procedimentos realizados no mesmo tempo cirúrgico",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2406",
+    "description": "Cobrança indevida de taxa de sala por administração de medicamentos",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2407",
+    "description": "Cobrança de taxas, de serviços realizados em ambientes incompatíveis com O uso de equipamentos",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2408",
+    "description": "Cobrança de taxas em quantidade superior ao tempo de permanência hospitalar",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2409",
+    "description": "Cobrança de taxa de observação em pronto socorro com permanência menor que O período estipulado",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2410",
+    "description": "Cobrança de taxa de observação em pronto socorro sem O registro da permanência",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2411",
+    "description": "Cobrança de taxa de sala de pronto socorro, para aplicação de medicamentos",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2412",
+    "description": "Cobrança de taxa de recuperação anestésica não justificada para O procedimento",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2413",
+    "description": "Cobrança de taxa inclusa no pacote negociado",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2414",
+    "description": "Cobrança de taxa de equipamento em concomitância com A cobrança de taxa para O procedimento",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2415",
+    "description": "Taxa exige informação do valor na guia",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2416",
+    "description": "Cobrança de taxa de recuperação anestésica para pacientes com pós- operatório imediato realizado na uti/cti",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2417",
+    "description": "Cobrança de taxa de recuperação anestésica sem A presença do anestesista",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2418",
+    "description": "Cobrança de taxa de sala incompatível com O procedimento",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2419",
+    "description": "Cobrança de taxa de observação para atendimento que gerou uma internação",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2420",
+    "description": "Cobrança de taxa de sala cirúrgica com porte anestésico diferente do procedimento autorizado/realizado",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2421",
+    "description": "Cobrança de taxa em quantidade incorreta",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2422",
+    "description": "Cobrança de taxa por uso de equipamento de uso obrigatório na sala de cirurgia, cuja taxa de sala cirúrgica já inclui seu uso",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2423",
+    "description": "Cobrança de taxa de equipamentos de uso obrigatório no local de atendimento",
+    "category": "linear",
+    "tiss_group": "taxas",
+    "tiss_group_label": "Taxas e aluguéis"
+  },
+  {
+    "code": "2501",
+    "description": "Procedimento em série inválido",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2502",
+    "description": "Cobrança de duas avaliações fisioterápicas",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2503",
+    "description": "Cobrança de psicoterapia individual, quando O aplicado É A cobrança de psicoterapia em grupo",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2504",
+    "description": "Quantidade de sessões cobradas não condizem com as assinaturas no controle de tratamento seriado",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2505",
+    "description": "O código cobrado É diferente do código autorizado",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2506",
+    "description": "A quantidade de sessões cobradas É diferente da quantidade autorizada",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2507",
+    "description": "O código autorizado está incompatível com A prescrição médica solicitada",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2508",
+    "description": "Cobrança de sessões sem O devido plano de tratamento E, ou, com O prazo de pagamento expirado",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2509",
+    "description": "Cobrança do procedimento seriado incompatível com O quadro clínico",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2510",
+    "description": "Cobrança do procedimento seriado em número de sessões acima da quantidade estabelecida",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2511",
+    "description": "Ausência de evolução no prontuário médico do tratamento seriado realizado",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2512",
+    "description": "Cobrança de sessões de fisioterapia em desacordo com as evoluções do prontuário médico",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2513",
+    "description": "Cobrança de tratamento seriado sem justificativa clínica/técnica",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2514",
+    "description": "Serviço não contratado para O prestador",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2515",
+    "description": "Local de atendimento inadequado",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2516",
+    "description": "Quantidade cobrada diferente da realizada",
+    "category": "technical",
+    "tiss_group": "procedimento_serie",
+    "tiss_group_label": "Procedimento em série"
+  },
+  {
+    "code": "2601",
+    "description": "Codificação incorreta/inadequada do procedimento",
+    "category": "technical",
+    "tiss_group": "honorarios",
+    "tiss_group_label": "Honorários"
+  },
+  {
+    "code": "2602",
+    "description": "Cobrança de honorário incluso no procedimento principal",
+    "category": "technical",
+    "tiss_group": "honorarios",
+    "tiss_group_label": "Honorários"
+  },
+  {
+    "code": "2603",
+    "description": "Cobrança de honorário sem registro da efetiva participação do profissional",
+    "category": "technical",
+    "tiss_group": "honorarios",
+    "tiss_group_label": "Honorários"
+  },
+  {
+    "code": "2604",
+    "description": "Procedimento principal não requer equipe médica",
+    "category": "technical",
+    "tiss_group": "honorarios",
+    "tiss_group_label": "Honorários"
+  },
+  {
+    "code": "2605",
+    "description": "Não cabe pagamento do honorário integral por ser A mesma via de acesso cirúrgico",
+    "category": "technical",
+    "tiss_group": "honorarios",
+    "tiss_group_label": "Honorários"
+  },
+  {
+    "code": "2606",
+    "description": "Cobrança do honorário em local de atendimento incorreto (inexistente)",
+    "category": "technical",
+    "tiss_group": "honorarios",
+    "tiss_group_label": "Honorários"
+  },
+  {
+    "code": "2607",
+    "description": "Cobrança de honorários em duplicidade",
+    "category": "technical",
+    "tiss_group": "honorarios",
+    "tiss_group_label": "Honorários"
+  },
+  {
+    "code": "2608",
+    "description": "Cobrança de consulta indevida, quando O procedimento principal já está sendo remunerado",
+    "category": "technical",
+    "tiss_group": "honorarios",
+    "tiss_group_label": "Honorários"
+  },
+  {
+    "code": "2609",
+    "description": "Local de atendimento não informado",
+    "category": "technical",
+    "tiss_group": "honorarios",
+    "tiss_group_label": "Honorários"
+  },
+  {
+    "code": "2610",
+    "description": "Grau de participação de auxiliar incompatível com procedimento cobrado",
+    "category": "technical",
+    "tiss_group": "honorarios",
+    "tiss_group_label": "Honorários"
+  },
+  {
+    "code": "2611",
+    "description": "Cobrança de especialista não justificada no evento",
+    "category": "technical",
+    "tiss_group": "honorarios",
+    "tiss_group_label": "Honorários"
+  },
+  {
+    "code": "2612",
+    "description": "Cobrança indevida de equipe \"stand-by\", já que angioplastia seguida de cirurgia cardíaca",
+    "category": "technical",
+    "tiss_group": "honorarios",
+    "tiss_group_label": "Honorários"
+  },
+  {
+    "code": "2613",
+    "description": "Honorário médico do anestesista já liberado no procedimento cirúrgico, pois \"analgesia por dia subsequente\" cobrada na mesma data do evento cirúrgico",
+    "category": "technical",
+    "tiss_group": "honorarios",
+    "tiss_group_label": "Honorários"
+  },
+  {
+    "code": "2614",
+    "description": "Cobrança de cada participante da equipe deve ser feita em guias diferentes",
+    "category": "technical",
+    "tiss_group": "honorarios",
+    "tiss_group_label": "Honorários"
+  },
+  {
+    "code": "2702",
+    "description": "Cobrança de exame não solicitado pelo médico",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2703",
+    "description": "Exame sem registro de execução",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2704",
+    "description": "Cobrança de exame não correlacionado ao relatório específico",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2705",
+    "description": "Cobrança de procedimento/exame sem justificativa para realização ou com justificativa insuficiente",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2706",
+    "description": "Cobrança de procedimento/exame com data de autorização posterior À do atendimento",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2707",
+    "description": "Exame não autorizado",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2708",
+    "description": "Cobrança de exame em quantidade incompatível com O procedimento/evolução clínica",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2710",
+    "description": "Cobrança de exame que exige autorização prévia",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2711",
+    "description": "Cobrança de exame com história clínica/hipótese diagnóstica não compatível",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2712",
+    "description": "Cobrança de exame em quantidade acima da máxima permitida/autorizada",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2713",
+    "description": "Cobrança de exame não compatível com A idade",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2714",
+    "description": "Cobrança de exame com ausência de resultado ou laudo técnico",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2715",
+    "description": "Exame realizado pelo mesmo profissional, na mesma especialidade, no prazo inferior ao estipulado sem justificativa adequada",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2716",
+    "description": "Exame cobrado não corresponde ao exame executado",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2717",
+    "description": "Cobrança de exame ambulatorial com data de autorização posterior À do atendimento",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2718",
+    "description": "Exames não justificam caráter de urgência",
+    "category": "technical",
+    "tiss_group": "exames",
+    "tiss_group_label": "Exames"
+  },
+  {
+    "code": "2801",
+    "description": "Pacote inválido",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2802",
+    "description": "Pacote incompatível com O sexo do beneficiário",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2803",
+    "description": "Idade do beneficiário incompatível com O pacote",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2804",
+    "description": "Valor total do pacote diferente do valor processado",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2805",
+    "description": "Valor do pacote superior ao valor dos itens",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2806",
+    "description": "Cobrança de pacote não executado",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2807",
+    "description": "Cobrança de pacote não solicitado pelo médico",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2808",
+    "description": "Pacote sem registro de execução",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2809",
+    "description": "Cobrança de pacote não correlacionado ao relatório específico",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2810",
+    "description": "Cobrança de pacote sem justificativa para realização ou com justificativa insuficiente",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2811",
+    "description": "Cobrança de pacote com data de autorização posterior À do atendimento",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2812",
+    "description": "Pacote não autorizado",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2813",
+    "description": "Cobrança de pacote em quantidade incompatível com O procedimento/evolução clínica",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2814",
+    "description": "Itens de composição do pacote não realizados",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2815",
+    "description": "Cobrança do pacote exige autorização prévia",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2816",
+    "description": "Cobrança de pacote com história clínica/hipótese diagnóstica não compatível",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2817",
+    "description": "Cobrança de pacote em quantidade acima da máxima permitida/autorizada",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2818",
+    "description": "Cobrança de pacote não compatível com A idade",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2819",
+    "description": "Cobrança de pacote com ausência de resultado ou laudo técnico",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2820",
+    "description": "Pacote realizado pelo mesmo profissional, na mesma especialidade, no prazo inferior ao estipulado sem justificativa adequada",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2821",
+    "description": "Pacote cobrado não corresponde ao exame executado",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2822",
+    "description": "Cobrança de pacote ambulatorial com data de autorização posterior À do atendimento",
+    "category": "technical",
+    "tiss_group": "pacotes",
+    "tiss_group_label": "Pacotes"
+  },
+  {
+    "code": "2901",
+    "description": "Revisão de glosa inválida",
+    "category": "administrative",
+    "tiss_group": "revisao_glosa",
+    "tiss_group_label": "Revisão de glosa"
+  },
+  {
+    "code": "2902",
+    "description": "Glosa mantida",
+    "category": "administrative",
+    "tiss_group": "revisao_glosa",
+    "tiss_group_label": "Revisão de glosa"
+  },
+  {
+    "code": "2903",
+    "description": "Pedido de revisão sem justificativa",
+    "category": "administrative",
+    "tiss_group": "revisao_glosa",
+    "tiss_group_label": "Revisão de glosa"
+  },
+  {
+    "code": "2904",
+    "description": "Mais de um recurso de glosa para A mesma guia/protocolo",
+    "category": "administrative",
+    "tiss_group": "revisao_glosa",
+    "tiss_group_label": "Revisão de glosa"
+  },
+  {
+    "code": "2905",
+    "description": "A guia não É de revisão",
+    "category": "administrative",
+    "tiss_group": "revisao_glosa",
+    "tiss_group_label": "Revisão de glosa"
+  },
+  {
+    "code": "2907",
+    "description": "Prazo de 180 dias ultrapassado para solicitação de reanálise",
+    "category": "administrative",
+    "tiss_group": "revisao_glosa",
+    "tiss_group_label": "Revisão de glosa"
+  },
+  {
+    "code": "2908",
+    "description": "Solicitação de reanálise efetuada de forma incorreta",
+    "category": "administrative",
+    "tiss_group": "revisao_glosa",
+    "tiss_group_label": "Revisão de glosa"
+  },
+  {
+    "code": "2909",
+    "description": "Prazo para solicitação de recurso de glosa prescrito",
+    "category": "administrative",
+    "tiss_group": "revisao_glosa",
+    "tiss_group_label": "Revisão de glosa"
+  },
+  {
+    "code": "3001",
+    "description": "Procedimento odontológico inválido",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3002",
+    "description": "Cobrança de procedimento odontológico que exige autorização prévia",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3003",
+    "description": "Idade do beneficiário incompatível com O procedimento odontológico",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3004",
+    "description": "Cobrança de procedimento odontológico em quantidade acima da máxima permitida/autorizada",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3007",
+    "description": "Procedimentos odontológicos duplicados",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3008",
+    "description": "Procedimento odontológico incluso no procedimento principal",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3009",
+    "description": "Cobrança de procedimento odontológico não executado",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3010",
+    "description": "Cobrança de procedimento não solicitado pelo cirurgião-dentista",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3011",
+    "description": "Procedimento odontológico sem registro de execução",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3012",
+    "description": "Cobrança de procedimento odontológico não correlacionado ao relatório específico",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3013",
+    "description": "Cobrança de procedimento odontológico sem justificativa para realização ou com justificativa insuficiente",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3014",
+    "description": "Cobrança de procedimento odontológico com data de autorização posterior À do atendimento",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3015",
+    "description": "Cobrança de procedimento odontológico com ausência de resultado ou laudo técnico",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3016",
+    "description": "Procedimento odontológico realizado, na mesma especialidade, no prazo inferior ao estipulado, sem justificativa",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3017",
+    "description": "Procedimento cobrado não corresponde A perícia (especificar)",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3018",
+    "description": "Evento glosado por auditoria (especificar)",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3019",
+    "description": "Evento sob análise técnica, aguardando liberação de confirmação para posterior pagamento",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3020",
+    "description": "Conforme documentação radiográfica enviada, evento realizado inadequadamente",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3021",
+    "description": "Falha em informação de dados de arcadas/hemi-arcos",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3022",
+    "description": "Falha em informação de dados de dente inicial e/ou final",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3023",
+    "description": "Falha em informação de dados de faces dos dentes",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3024",
+    "description": "Evento só possível em dentes decíduos",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3025",
+    "description": "Evento só possível em dentes permanentes",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3026",
+    "description": "Erro nas informações de ordem dos dentes inicial E final",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3027",
+    "description": "Desacordo entre O tipo de dente E O número de canais solicitados",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3028",
+    "description": "Evento restrito À especialistas",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3029",
+    "description": "Evento não indicado pela auditoria inicial",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3030",
+    "description": "Auditoria final consta que A restauração foi realizada em outro material",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3031",
+    "description": "Radiografia fora dos padrões técnicos",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3032",
+    "description": "Intervalo da última MPP inferior A três meses",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3033",
+    "description": "Intervalo da última MPP inferior A quatro meses",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3034",
+    "description": "Justificativa tecnicamente não satisfatória",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3035",
+    "description": "Paciente em tratamento com O mesmo profissional",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3036",
+    "description": "Paciente em tratamento com outro profissional",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3037",
+    "description": "Procedimento cobrado não É igual ao executado",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3038",
+    "description": "Radiografia inicial incongruente com A radiografia final",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3039",
+    "description": "Radiografia não corresponde ao procedimento cobrado",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3040",
+    "description": "Glosa técnica (especificar detalhadamente)",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3041",
+    "description": "Aguardando documentação de ortodontia",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3042",
+    "description": "Após análise da radiografia inicial verificou-se exodontia de incluso",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3043",
+    "description": "Após análise da radiografia inicial verificou-se exodontia de semi- incluso",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3044",
+    "description": "Após análise da radiografia inicial verificou-se exodontia simples",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3045",
+    "description": "Após análise da radiografia inicial, verificou-se exodontia de fragmento radicular",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3046",
+    "description": "Auditoria final consta que O procedimento foi realizado com outro material",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3047",
+    "description": "Ausência de imagem/foto/radiografia/ diagnóstico pós procedimento odontológico",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3048",
+    "description": "Cancelamento do procedimento odontológico por solicitação do beneficiário",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3049",
+    "description": "Cancelamento do procedimento odontológico por solicitação do prestador",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3050",
+    "description": "Cobrança de urgência/emergência na vigência do tratamento odontológico",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3051",
+    "description": "Documentação em análise",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3052",
+    "description": "Documentação incompleta, incorreta ou ausente",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3053",
+    "description": "Elementos podem ser visualizados em uma mesma película",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3054",
+    "description": "Identificado conduto(s) não obturado(s)",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3055",
+    "description": "Identificado tratamento endodôntico E não retratamento",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3056",
+    "description": "Na auditoria foi constatada divergência na quantidade de faces restauradas",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3057",
+    "description": "Não apresenta A quantidade mínima de elementos dentários por segmento",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3058",
+    "description": "Necessária auditoria final",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3059",
+    "description": "Necessária auditoria inicial",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3060",
+    "description": "Necessária auditoria intermediária",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3061",
+    "description": "Necessária avaliação do especialista",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3062",
+    "description": "Necessário enviar laudo ou relatório técnico sobre O tratamento solicitado",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3063",
+    "description": "O plano de tratamento autorizado será cancelado devido À troca de profissional",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3064",
+    "description": "Procedimento autorizado apenas para dentes tratados endodonticamente",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3065",
+    "description": "Procedimento autorizado somente para dentes anteriores",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3066",
+    "description": "Procedimento em desacordo com O anexo guia tratamento odontológico situação inicial",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3067",
+    "description": "Radiografia final não enviada",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3068",
+    "description": "Radiografia final sem dissociação dos condutos",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3069",
+    "description": "Radiografia indica A necessidade de tratamento endodontico",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3070",
+    "description": "Radiografia indica A presença de raiz residual no alveolo",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3071",
+    "description": "Radiografia indica ausencia de núcleo",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3072",
+    "description": "Radiografia indica canal(ais) não obturado(s)",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3073",
+    "description": "Radiografia indica desvio da trajetoria do canal",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3074",
+    "description": "Radiografia indica excesso de material",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3075",
+    "description": "Radiografia indica falha na obturação do(s) conduto(s)",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3076",
+    "description": "Radiografia indica falta de adaptação da coroa/núcleo",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3077",
+    "description": "Radiografia indica falta de adaptação da coroa/peça protética",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3078",
+    "description": "Radiografia indica núcleo inadequado",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3079",
+    "description": "Radiografia indica tratamento endodôntico E não retratatamento endodôntico",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3080",
+    "description": "Radiografia inicial E final não enviadas",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3081",
+    "description": "Radiografia inicial não enviada",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3082",
+    "description": "Radiografia/imagem indica falha na restauração",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3083",
+    "description": "Reavaliar O plano de tratamento observando critérios de indicação, oportunidade E viabilidade",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3084",
+    "description": "Relatório analise técnica sem carimbo/assinatura do prestador",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3085",
+    "description": "Radiografia não corresponde ao procedimento solicitado",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3086",
+    "description": "Tratamento odontológico não caracterizado como urgência",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3087",
+    "description": "Cobrança indevida de taxa administrativa",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3088",
+    "description": "Valor acatado, conforme reajuste retroativo",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3089",
+    "description": "Quantidade de itens incompatível com O período de internação",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3090",
+    "description": "Necessário enviar as etiquetas E selos hemoterápicos do material utilizado",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3091",
+    "description": "Cobrança fora do prazo estipulado no contrato",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3092",
+    "description": "Valor acatado por glosa realizada indevidamente, após avaliação do recurso",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3093",
+    "description": "Valor acatado por autorização especial",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3094",
+    "description": "Valor da taxa administrativa alterado em razão de glosas",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3095",
+    "description": "Recurso de glosa acatado",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3096",
+    "description": "Atendimento não confirmado pelo beneficiário",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3097",
+    "description": "Tipo de atendimento incompatível com A segmentação assistencial contratada",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3098",
+    "description": "O prestador possui pacote contratado para este procedimento. verifique O código correspondente",
+    "category": "technical",
+    "tiss_group": "odontologia",
+    "tiss_group_label": "Odontologia"
+  },
+  {
+    "code": "3100",
+    "description": "Para liberar este acesso, entre em contato com A operadora E solicite O cadastramento do seu código de origem",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3101",
+    "description": "O procedimento solicitado É de execução única E já foi realizado pelo beneficiário",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3102",
+    "description": "É necessário ter um procedimento relacionado À solicitação",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3103",
+    "description": "Solicitação de autorização fora do prazo acordado",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3104",
+    "description": "Recusado, conforme junta médica/odontológica",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3105",
+    "description": "Item com utilização suspensa pelo órgão competente",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3106",
+    "description": "Registro anvisa inválido ou não informado",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3107",
+    "description": "Item categorizado como não descartável",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3108",
+    "description": "Item incluso no pacote negociado",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3109",
+    "description": "Procedimento solicitado não autorizado por não constar do rol de procedimentos E eventos em saúde da ANS",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3110",
+    "description": "Bloqueio judicial",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3111",
+    "description": "Campo condicionado não preenchido ou incorreto",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3112",
+    "description": "Desconto de coparticipação/franquia conforme contrato",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3113",
+    "description": "Necessário envio de radiografia periapical da região",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3114",
+    "description": "Necessário envio de radiografia interproximal da região",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3115",
+    "description": "Necessário envio de radiografia oclusal da região",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3116",
+    "description": "Realização de procedimento com necessidade estética",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3117",
+    "description": "Procedimento odontológico com indicação técnica em prognóstico desfavorável",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3118",
+    "description": "Necessário enviar termo de consentimento informado",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3119",
+    "description": "Necessário enviar termo de responsabilidade profissional",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3120",
+    "description": "Necessário O envio do pedido do profissional solicitante",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3121",
+    "description": "Item autorizado E ainda não indenizado",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3122",
+    "description": "Solicitação de reembolso em plano sem direito À livre escolha",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3123",
+    "description": "Item para A mesma finalidade já autorizado",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3124",
+    "description": "Radiografia sugere indicação de exodontia",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3125",
+    "description": "Radiografia sugere indicação de retratamento endodontico",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3126",
+    "description": "Cobrança de item anterior À data de realização",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3127",
+    "description": "Imagem sugere alteração patológica",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3128",
+    "description": "Imagem sugere presença de artefato de imagem",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3129",
+    "description": "Imagem sugere presença de corpo estranho",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3130",
+    "description": "Imagem sugere implante em processo de osseointegração",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3131",
+    "description": "Enviar plano de tratamento ortodôntico inicial",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3132",
+    "description": "Enviar plano de tratamento ortodôntico intermediário",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3133",
+    "description": "Tratamento ortodôntico concluído",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3134",
+    "description": "Tratamento ortodôntico em fase de contenção",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3135",
+    "description": "Profissional informado para reembolso pertence A rede da operadora",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3136",
+    "description": "Procedimento ou item assistencial autorizado",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3137",
+    "description": "Procedimento prevê coparticipação/franquia conforme contrato",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3138",
+    "description": "Condição clínica incompatível com A solicitação",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3139",
+    "description": "Tratamento ortodontico suspenso A pedido do dentista",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3140",
+    "description": "Abandono de tratamento pelo beneficiário",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3141",
+    "description": "Beneficiário não possui cobertura para assistência ambulatorial",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3142",
+    "description": "Item não contratado",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3143",
+    "description": "Valor acatado por decisão judicial /liminar",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3144",
+    "description": "Não É necessária autorização prévia",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3145",
+    "description": "Não autorizado por motivo técnico",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3146",
+    "description": "Produto contratado não adaptado À lei 9.656/98, sem cobertura contratual para O item solicitado",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3147",
+    "description": "Material passível de reprocessamento",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3148",
+    "description": "Tipo de transação inválido",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3149",
+    "description": "Indicador de envio em papel inválido",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3150",
+    "description": "Código da tabela inválido",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3151",
+    "description": "O estabelecimento de saúde para O qual foi solicitada A informação sobre partos não possuía vínculo com A operadora no período A que se refere A informação",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3152",
+    "description": "O profissional para O qual foi solicitada A informação sobre partos não possuía vínculo com A operadora no período A que se refere A informação",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3153",
+    "description": "O estabelecimento de saúde para O qual foi solicitada A informação sobre partos não possui vínculo com A operadora",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3154",
+    "description": "O profissional para O qual foi solicitada A informação sobre partos não possui vínculo com A operadora",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "3155",
+    "description": "Partograma ou relatório médico não disponível para consulta da operadora",
+    "category": "administrative",
+    "tiss_group": "regras_elegibilidade",
+    "tiss_group_label": "Regras de elegibilidade"
+  },
+  {
+    "code": "5001",
+    "description": "Mensagem eletrônica fora do padrão TISS",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5002",
+    "description": "Não foi possível validar O arquivo XML",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5003",
+    "description": "Endereço do remetente inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5004",
+    "description": "Endereço do destinatário inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5005",
+    "description": "Remetente não identificado",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5006",
+    "description": "Destinatário não identificado",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5007",
+    "description": "Mensagem inconsistente ou incompleta",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5008",
+    "description": "Espaço reservado para A caixa de saída insuficiente",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5009",
+    "description": "Espaço reservado para A caixa de entrada insuficiente",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5010",
+    "description": "Envio de mensagem não foi terminado",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5011",
+    "description": "Envio de mensagem finalizada",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5012",
+    "description": "Recebimento de mensagem não finalizado",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5013",
+    "description": "Recebimento de mensagem finalizada",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5014",
+    "description": "Código hash inválido. mensagem pode estar corrompida",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5015",
+    "description": "Número de guias/demonstrativos dentro da mensagem superior ao tamanho máximo permitido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5016",
+    "description": "Sem nenhuma ocorrencia de movimento na competencia para envio A ANS",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5017",
+    "description": "Arquivo processado pela ANS",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5018",
+    "description": "Certificado digital inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5019",
+    "description": "Certificado digital vencido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5020",
+    "description": "Certificado digital revogado",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5021",
+    "description": "Cadeia de certificação inválida",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5022",
+    "description": "Assinatura digital não confere",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5023",
+    "description": "Competência não está liberada para envio de dados",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5024",
+    "description": "Operadora inativa na competência dos dados",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5025",
+    "description": "Data de registro da transação inválida",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5026",
+    "description": "Hora de registro da transação inválida",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5027",
+    "description": "Registro ANS da operadora inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5028",
+    "description": "Versão do padrão inválida",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5029",
+    "description": "Indicador inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5030",
+    "description": "Código do munícipio inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5031",
+    "description": "Caráter de atendimento inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5032",
+    "description": "Indicador de recém-nato inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5033",
+    "description": "Motivo de encerramento inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5034",
+    "description": "Valor não informado",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5035",
+    "description": "Código da tabela de referência não informado",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5036",
+    "description": "Código do grupo do procedimento inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5037",
+    "description": "Código do dente inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5038",
+    "description": "Código da região da boca inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5039",
+    "description": "Código da face do dente inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5040",
+    "description": "Valor deve ser maior que zero",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5041",
+    "description": "Quantidade não informada",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5042",
+    "description": "Valor informado da guia diferente do somatório do valor informado dos itens",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5043",
+    "description": "Motivo inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5044",
+    "description": "Já existem informações na ANS para A competência informada",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5045",
+    "description": "Competência anterior não enviada",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5046",
+    "description": "Competência inválida",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5047",
+    "description": "Número do lote não informado",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5048",
+    "description": "Data de nascimento do beneficiário inválida",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5049",
+    "description": "Valor total menor que zero na guia",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5050",
+    "description": "Valor informado inválido",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5051",
+    "description": "Competencia do arquivo diferente da competencia da data de processamento do lançamento",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5052",
+    "description": "Identificador inexistente",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5053",
+    "description": "Identificador já informado",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5054",
+    "description": "Identificador não encontrado",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5055",
+    "description": "Identificador já informado na competência",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5056",
+    "description": "Identificador não informado na competência",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5057",
+    "description": "Guia de consulta com mais de um procedimento",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5058",
+    "description": "Procedimento incompatível com O tipo de guia",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5059",
+    "description": "Exclusão inválida - existem lançamentos vinculados A esta forma de contratação",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5060",
+    "description": "Valor total pago diferente da soma das parcelas pagas no lançamento",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5061",
+    "description": "Tipo de atendimento operadora intermediária não informado",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  },
+  {
+    "code": "5062",
+    "description": "Registro ANS da operadora intermediária não informado",
+    "category": "administrative",
+    "tiss_group": "arquivo_tiss",
+    "tiss_group_label": "Arquivo/Mensagem TISS"
+  }
+]

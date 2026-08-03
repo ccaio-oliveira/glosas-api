@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('denials', function (Blueprint $table) {
-            $table->foreignId('clinic_id')->after('id')->constrained('clinics')->cascadeOnDelete();
+        Schema::table('denial_reason_codes', function (Blueprint $table) {
+            $table->string('tiss_group')->nullable()->after('category');
+            $table->string('tiss_group_label')->nullable()->after('tiss_group');
         });
     }
 
@@ -21,9 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('denials', function (Blueprint $table) {
-            $table->dropForeign(['clinic_id']);
-            $table->dropColumn('clinic_id');
+        Schema::table('denial_reason_codes', function (Blueprint $table) {
+            $table->dropColumn(['tiss_group', 'tiss_group_label']);
         });
     }
 };
