@@ -33,8 +33,10 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/denials/summary', [DenialController::class, 'summary']);
     Route::get('/denials', [DenialController::class, 'index']);
+    Route::get('/denials/template-gaps', [DenialController::class, 'templateGaps']);
     Route::get('/denials/{denial}', [DenialController::class, 'show']);
     Route::put('/denials/{denial}', [DenialController::class, 'update']);
     Route::post('/denials/{denial}/appeal', [AppealController::class, 'store']);
     Route::post('/denials/{denial}/appeal/submit', [AppealController::class, 'submit']);
+    Route::post('/denials/{denial}/appeal/generate', [AppealController::class, 'generate']);
 });

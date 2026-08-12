@@ -10,7 +10,7 @@ class Appeal extends Model
 {
     use HasFactory, BelongsToClinic;
 
-    protected $fillable = ['clinic_id', 'denial_id', 'ai_generated_text', 'document_path', 'status', 'submission_channel', 'submitted_by_user_id', 'submitted_at'];
+    protected $fillable = ['clinic_id', 'denial_id', 'ai_generated_text', 'generation_source', 'appeal_template_id', 'document_path', 'status', 'submission_channel', 'submitted_by_user_id', 'submitted_at'];
 
     protected function casts(): array
     {

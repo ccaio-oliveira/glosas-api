@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AppealTemplate;
 use App\Models\Denial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DenialController extends Controller
 {
@@ -64,6 +66,20 @@ class DenialController extends Controller
             'total_amount' => (float) Denial::sum('amount'),
             'needs_ai_review_count' => Denial::where('needs_ai_review', true)->count(),
         ];
+    }
+
+    public function templateGaps()
+    {
+        $covered = AppealTemplate::where('scope', 'code')->where('is_active', true)
+        ->pluck('denial_reason_code')->filter()->all();
+
+        return Denial::select('reason_code', 'reason_description', DB::raw('count(*) as total'), DB::raw('sum(amount) as amount'))
+        ->whereNotNull('reason_code')
+        ->whereNotIn('reason_code', $covered)
+        ->groupBy('reason_code', 'reason_description')
+        ->orderByDesc('total')
+        ->limit(20)
+        ->get();
     }
 
     private function present(Denial $denial): array

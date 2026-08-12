@@ -31,5 +31,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $this->call(DenialReasonCodeSeeder::class);
+        $this->call(AppealTemplateSeeder::class);
     }
 }
