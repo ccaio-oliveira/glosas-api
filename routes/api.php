@@ -39,4 +39,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/denials/{denial}/appeal', [AppealController::class, 'store']);
     Route::post('/denials/{denial}/appeal/submit', [AppealController::class, 'submit']);
     Route::post('/denials/{denial}/appeal/generate', [AppealController::class, 'generate']);
+    Route::get('/denials/{denial}/appeal/pdf', [AppealController::class, 'pdf']);
 });

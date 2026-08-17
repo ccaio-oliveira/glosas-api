@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Appeal;
 use App\Models\Denial;
 use App\Services\Appeals\AppealGenerator;
+use App\Services\Appeals\AppealPdfGenerator;
 use Illuminate\Http\Request;
 
 class AppealController extends Controller
@@ -31,7 +32,7 @@ class AppealController extends Controller
         return $appeal;
     }
 
-    public function submit(Request $request, Denial $denial)
+    public function submit(Request $request, Denial $denial, AppealPdfGenerator $pdfGenerator)
     {
         $appeal = $denial->appeals()->latest('id')->firstOrFail();
 
@@ -40,6 +41,7 @@ class AppealController extends Controller
             'submission_channel' => 'manual',
             'submitted_by_user_id' => $request->user()->id,
             'submitted_at' => now(),
+            'document_path' => $pdfGenerator->store($appeal),
         ]);
 
         $denial->update(['status' => 'appealed']);
@@ -88,5 +90,14 @@ class AppealController extends Controller
             'requires_clinical_input' => $result->requiresClinicalInput,
             'missing_legal_basis' => $result->missingLegalBasis,
         ]);
+    }
+
+    public function pdf(Denial $denial, AppealPdfGenerator $pdfGenerator)
+    {
+        $appeal = $denial->appeals()->latest('id')->firstOrFail();
+
+        abort_if(blank($appeal->ai_generated_text), 422, "O recurso ainda não tem texto.");
+
+        return $pdfGenerator->make($appeal)->download($pdfGenerator->filename($appeal));
     }
 }
