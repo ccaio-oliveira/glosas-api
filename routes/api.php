@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ErrorLogController;
 use App\Http\Controllers\AppealController;
+use App\Http\Controllers\AppealListController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ClaimController;
 use App\Http\Controllers\ClinicController;
@@ -41,6 +42,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/denials/{denial}/appeal/submit', [AppealController::class, 'submit']);
     Route::post('/denials/{denial}/appeal/generate', [AppealController::class, 'generate']);
     Route::get('/denials/{denial}/appeal/pdf', [AppealController::class, 'pdf']);
+
+    Route::get('/appeals/summary', [AppealListController::class, 'summary']);
+    Route::get('/appeals', [AppealListController::class, 'index']);
+    Route::put('/appeals/{appeal}/status', [AppealListController::class, 'updateStatus']);
 
     Route::middleware(['auth:sanctum', 'super_admin'])->prefix('admin')->group(function () {
         Route::get('/error-logs/summary', [ErrorLogController::class, 'summary']);
