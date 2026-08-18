@@ -13,6 +13,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->statefulApi();
+        $middleware->alias([
+            'super_admin' => \App\Http\Middleware\EnsureSuperAdmin::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->report(function (\Throwable $e) {
@@ -20,12 +23,25 @@ return Application::configure(basePath: dirname(__DIR__))
                 return;
             }
 
+            if (
+                $e instanceof \Symfony\Component\HttpKernel\Exception\HttpExceptionInterface
+                || $e instanceof \Illuminate\Validation\ValidationException
+                || $e instanceof \Illuminate\Auth\AuthenticationException
+                || $e instanceof \Illuminate\Database\Eloquent\ModelNotFoundException
+            ) {
+                return;
+            }
+
             try {
                 \App\Models\ErrorLog::log(
                     category: 'general',
-                    message: $e->getMessage(),
+                    message: $e->getMessage() ?: get_class($e),
                     source: get_class($e),
-                    context: ['trace' => $e->getTraceAsString()],
+                    context: [
+                        'file' => $e->getFile().':'.$e->getLine(),
+                        'trace' => collect(explode("\n", $e->getTraceAsString()))->take(20)->implode("\n"),
+                        'url' => request()?->fullUrl(),
+                    ],
                     severity: 'critical',
                     clinicId: auth()->check() ? auth()->user()->clinic_id : null
                 );

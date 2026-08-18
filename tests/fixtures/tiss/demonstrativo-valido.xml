@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Demonstrativo de Análise de Conta — arquivo de TESTE do GlosasAI.
+
+  Dados reais:  códigos de glosa (Tabela 38), dentes (Tabela 28),
+                faces do dente (Tabela 32) e CBO (Tabela 24) do padrão TISS.
+  Dados fictícios: registro ANS, pacientes, valores e os códigos de
+                procedimento — a Tabela 22 (TUSS de procedimentos) é publicação
+                separada e não está entre os insumos do projeto. Troque por
+                códigos reais quando tiver um demonstrativo de operadora.
+
+  Resultado esperado: 4 guias · 9 itens · 6 glosas · R$ 1.492,00 glosados.
+-->
+<ans:mensagemTISS xmlns:ans="http://www.ans.gov.br/padroes/tiss/schemas">
+  <ans:cabecalho>
+    <ans:identificacaoTransacao>
+      <ans:tipoTransacao>DEMONSTRATIVO_ANALISE_CONTA</ans:tipoTransacao>
+      <ans:numeroLote>202608001</ans:numeroLote>
+      <ans:dataRegistroTransacao>2026-08-10</ans:dataRegistroTransacao>
+    </ans:identificacaoTransacao>
+    <ans:origem>
+      <ans:registroANS>999001</ans:registroANS>
+    </ans:origem>
+    <ans:destino>
+      <ans:codigoPrestadorNaOperadora>PRE-004821</ans:codigoPrestadorNaOperadora>
+    </ans:destino>
+    <ans:versaoPadrao>3.05.00</ans:versaoPadrao>
+  </ans:cabecalho>
+
+  <ans:demonstrativosDetalhados>
+
+    <!-- Guia 1: uma glosa administrativa com template de código -->
+    <ans:demonstrativoDetalhado>
+      <ans:dadosGuia>
+        <ans:numeroGuiaPrestador>2026001</ans:numeroGuiaPrestador>
+        <ans:numeroGuiaOperadora>OP-77120001</ans:numeroGuiaOperadora>
+        <ans:dataAtendimento>2026-07-14</ans:dataAtendimento>
+        <ans:dadosBeneficiario>
+          <ans:numeroCarteira>88110023456</ans:numeroCarteira>
+          <ans:nomeBeneficiario>Maria Oliveira Santos</ans:nomeBeneficiario>
+        </ans:dadosBeneficiario>
+        <ans:dadosProcedimento>
+          <ans:codigoProcedimento>81000234</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Restauração em resina composta - 2 faces</ans:descricaoProcedimento>
+          <ans:denteRegiao>36</ans:denteRegiao>
+          <ans:faces>
+            <ans:face>O</ans:face>
+            <ans:face>M</ans:face>
+          </ans:faces>
+          <ans:cboProfissional>223208</ans:cboProfissional>
+          <ans:valorInformado>180.00</ans:valorInformado>
+          <ans:valorProcessado>180.00</ans:valorProcessado>
+          <ans:valorLiberado>0.00</ans:valorLiberado>
+          <ans:valorGlosa>180.00</ans:valorGlosa>
+          <ans:codigoGlosa>1402</ans:codigoGlosa>
+        </ans:dadosProcedimento>
+        <ans:dadosProcedimento>
+          <ans:codigoProcedimento>81000450</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Profilaxia - polimento coronário</ans:descricaoProcedimento>
+          <ans:cboProfissional>223208</ans:cboProfissional>
+          <ans:valorInformado>90.00</ans:valorInformado>
+          <ans:valorProcessado>90.00</ans:valorProcessado>
+          <ans:valorLiberado>90.00</ans:valorLiberado>
+          <ans:valorGlosa>0.00</ans:valorGlosa>
+        </ans:dadosProcedimento>
+      </ans:dadosGuia>
+    </ans:demonstrativoDetalhado>
+
+    <!-- Guia 2: glosa parcial, template de código do grupo Odontologia -->
+    <ans:demonstrativoDetalhado>
+      <ans:dadosGuia>
+        <ans:numeroGuiaPrestador>2026002</ans:numeroGuiaPrestador>
+        <ans:numeroGuiaOperadora>OP-77120002</ans:numeroGuiaOperadora>
+        <ans:dataAtendimento>2026-07-16</ans:dataAtendimento>
+        <ans:dadosBeneficiario>
+          <ans:numeroCarteira>88110099871</ans:numeroCarteira>
+          <ans:nomeBeneficiario>João Pereira Lima</ans:nomeBeneficiario>
+        </ans:dadosBeneficiario>
+        <ans:dadosProcedimento>
+          <ans:codigoProcedimento>81000789</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Tratamento endodôntico - molar</ans:descricaoProcedimento>
+          <ans:denteRegiao>46</ans:denteRegiao>
+          <ans:cboProfissional>223212</ans:cboProfissional>
+          <ans:valorInformado>650.00</ans:valorInformado>
+          <ans:valorProcessado>650.00</ans:valorProcessado>
+          <ans:valorLiberado>400.00</ans:valorLiberado>
+          <ans:valorGlosa>250.00</ans:valorGlosa>
+          <ans:codigoGlosa>3081</ans:codigoGlosa>
+        </ans:dadosProcedimento>
+        <ans:dadosProcedimento>
+          <ans:codigoProcedimento>81000112</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Radiografia periapical</ans:descricaoProcedimento>
+          <ans:denteRegiao>46</ans:denteRegiao>
+          <ans:cboProfissional>223212</ans:cboProfissional>
+          <ans:valorInformado>35.00</ans:valorInformado>
+          <ans:valorProcessado>35.00</ans:valorProcessado>
+          <ans:valorLiberado>35.00</ans:valorLiberado>
+          <ans:valorGlosa>0.00</ans:valorGlosa>
+        </ans:dadosProcedimento>
+      </ans:dadosGuia>
+    </ans:demonstrativoDetalhado>
+
+    <!-- Guia 3: uma glosa com template de código, outra que cai no grupo "cobranca" -->
+    <ans:demonstrativoDetalhado>
+      <ans:dadosGuia>
+        <ans:numeroGuiaPrestador>2026003</ans:numeroGuiaPrestador>
+        <ans:numeroGuiaOperadora>OP-77120003</ans:numeroGuiaOperadora>
+        <ans:dataAtendimento>2026-07-21</ans:dataAtendimento>
+        <ans:dadosBeneficiario>
+          <ans:numeroCarteira>88110044502</ans:numeroCarteira>
+          <ans:nomeBeneficiario>Ana Carolina Ribeiro</ans:nomeBeneficiario>
+        </ans:dadosBeneficiario>
+        <ans:dadosProcedimento>
+          <ans:codigoProcedimento>81000567</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Raspagem e alisamento radicular por sextante</ans:descricaoProcedimento>
+          <ans:cboProfissional>223248</ans:cboProfissional>
+          <ans:valorInformado>320.00</ans:valorInformado>
+          <ans:valorProcessado>320.00</ans:valorProcessado>
+          <ans:valorLiberado>0.00</ans:valorLiberado>
+          <ans:valorGlosa>320.00</ans:valorGlosa>
+          <ans:codigoGlosa>3052</ans:codigoGlosa>
+        </ans:dadosProcedimento>
+        <ans:dadosProcedimento>
+          <ans:codigoProcedimento>81000901</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Aplicação tópica de flúor</ans:descricaoProcedimento>
+          <ans:cboProfissional>223208</ans:cboProfissional>
+          <ans:valorInformado>60.00</ans:valorInformado>
+          <ans:valorProcessado>60.00</ans:valorProcessado>
+          <ans:valorLiberado>48.00</ans:valorLiberado>
+          <ans:valorGlosa>12.00</ans:valorGlosa>
+          <ans:codigoGlosa>1701</ans:codigoGlosa>
+        </ans:dadosProcedimento>
+      </ans:dadosGuia>
+    </ans:demonstrativoDetalhado>
+
+    <!-- Guia 4: grupo Odontologia sem template de código + código inexistente na Tabela 38 -->
+    <ans:demonstrativoDetalhado>
+      <ans:dadosGuia>
+        <ans:numeroGuiaPrestador>2026004</ans:numeroGuiaPrestador>
+        <ans:numeroGuiaOperadora>OP-77120004</ans:numeroGuiaOperadora>
+        <ans:dataAtendimento>2026-07-28</ans:dataAtendimento>
+        <ans:dadosBeneficiario>
+          <ans:numeroCarteira>88110077310</ans:numeroCarteira>
+          <ans:nomeBeneficiario>Roberto Carvalho Nunes</ans:nomeBeneficiario>
+        </ans:dadosBeneficiario>
+        <ans:dadosProcedimento>
+          <ans:codigoProcedimento>81001023</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Coroa provisória em resina</ans:descricaoProcedimento>
+          <ans:denteRegiao>21</ans:denteRegiao>
+          <ans:cboProfissional>223208</ans:cboProfissional>
+          <ans:valorInformado>450.00</ans:valorInformado>
+          <ans:valorProcessado>450.00</ans:valorProcessado>
+          <ans:valorLiberado>0.00</ans:valorLiberado>
+          <ans:valorGlosa>450.00</ans:valorGlosa>
+          <ans:codigoGlosa>3021</ans:codigoGlosa>
+        </ans:dadosProcedimento>
+        <ans:dadosProcedimento>
+          <ans:codigoProcedimento>81000345</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Exodontia simples de permanente</ans:descricaoProcedimento>
+          <ans:denteRegiao>38</ans:denteRegiao>
+          <ans:cboProfissional>223208</ans:cboProfissional>
+          <ans:valorInformado>280.00</ans:valorInformado>
+          <ans:valorProcessado>280.00</ans:valorProcessado>
+          <ans:valorLiberado>0.00</ans:valorLiberado>
+          <ans:valorGlosa>280.00</ans:valorGlosa>
+          <ans:codigoGlosa>9999</ans:codigoGlosa>
+        </ans:dadosProcedimento>
+        <ans:dadosProcedimento>
+          <ans:codigoProcedimento>81000234</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Restauração em resina composta - 1 face</ans:descricaoProcedimento>
+          <ans:denteRegiao>24</ans:denteRegiao>
+          <ans:faces>
+            <ans:face>V</ans:face>
+          </ans:faces>
+          <ans:cboProfissional>223208</ans:cboProfissional>
+          <ans:valorInformado>180.00</ans:valorInformado>
+          <ans:valorProcessado>180.00</ans:valorProcessado>
+          <ans:valorLiberado>180.00</ans:valorLiberado>
+          <ans:valorGlosa>0.00</ans:valorGlosa>
+        </ans:dadosProcedimento>
+      </ans:dadosGuia>
+    </ans:demonstrativoDetalhado>
+
+  </ans:demonstrativosDetalhados>
+</ans:mensagemTISS>

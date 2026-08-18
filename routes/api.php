@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ErrorLogController;
 use App\Http\Controllers\AppealController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ClaimController;
@@ -40,4 +41,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/denials/{denial}/appeal/submit', [AppealController::class, 'submit']);
     Route::post('/denials/{denial}/appeal/generate', [AppealController::class, 'generate']);
     Route::get('/denials/{denial}/appeal/pdf', [AppealController::class, 'pdf']);
+
+    Route::middleware(['auth:sanctum', 'super_admin'])->prefix('admin')->group(function () {
+        Route::get('/error-logs/summary', [ErrorLogController::class, 'summary']);
+        Route::get('/error-logs', [ErrorLogController::class, 'index']);
+        Route::post('error-logs/resolve-group', [ErrorLogController::class, 'resolveGroup']);
+        Route::post('/error-logs/{errorLog}/resolve', [ErrorLogController::class, 'resolve']);
+        Route::post('/error-logs/{errorLog}/unresolve', [ErrorLogController::class, 'unresolve']);
+    });
 });

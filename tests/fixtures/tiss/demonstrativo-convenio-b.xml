@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Segundo convênio (registro ANS 999002) — use depois do demonstrativo-valido.xml
+  para conferir que o sistema cria e vincula uma segunda operadora sozinho, e que
+  os filtros por convênio nas telas de Glosas passam a fazer sentido.
+
+  Resultado esperado: 2 guias · 3 itens · 2 glosas · R$ 1.130,00 glosados.
+-->
+<ans:mensagemTISS xmlns:ans="http://www.ans.gov.br/padroes/tiss/schemas">
+  <ans:cabecalho>
+    <ans:identificacaoTransacao>
+      <ans:tipoTransacao>DEMONSTRATIVO_ANALISE_CONTA</ans:tipoTransacao>
+      <ans:numeroLote>202608002</ans:numeroLote>
+      <ans:dataRegistroTransacao>2026-08-12</ans:dataRegistroTransacao>
+    </ans:identificacaoTransacao>
+    <ans:origem>
+      <ans:registroANS>999002</ans:registroANS>
+    </ans:origem>
+    <ans:destino>
+      <ans:codigoPrestadorNaOperadora>PRE-004821</ans:codigoPrestadorNaOperadora>
+    </ans:destino>
+    <ans:versaoPadrao>3.05.00</ans:versaoPadrao>
+  </ans:cabecalho>
+
+  <ans:demonstrativosDetalhados>
+
+    <ans:demonstrativoDetalhado>
+      <ans:dadosGuia>
+        <ans:numeroGuiaPrestador>2026101</ans:numeroGuiaPrestador>
+        <ans:numeroGuiaOperadora>OP-55430101</ans:numeroGuiaOperadora>
+        <ans:dataAtendimento>2026-07-30</ans:dataAtendimento>
+        <ans:dadosBeneficiario>
+          <ans:numeroCarteira>44220011903</ans:numeroCarteira>
+          <ans:nomeBeneficiario>Camila Duarte Freitas</ans:nomeBeneficiario>
+        </ans:dadosBeneficiario>
+        <ans:dadosProcedimento>
+          <ans:codigoProcedimento>81001560</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Núcleo metálico fundido</ans:descricaoProcedimento>
+          <ans:denteRegiao>11</ans:denteRegiao>
+          <ans:cboProfissional>223208</ans:cboProfissional>
+          <ans:valorInformado>890.00</ans:valorInformado>
+          <ans:valorProcessado>890.00</ans:valorProcessado>
+          <ans:valorLiberado>0.00</ans:valorLiberado>
+          <ans:valorGlosa>890.00</ans:valorGlosa>
+          <ans:codigoGlosa>3009</ans:codigoGlosa>
+        </ans:dadosProcedimento>
+        <ans:dadosProcedimento>
+          <ans:codigoProcedimento>81000112</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Radiografia periapical</ans:descricaoProcedimento>
+          <ans:denteRegiao>11</ans:denteRegiao>
+          <ans:cboProfissional>223208</ans:cboProfissional>
+          <ans:valorInformado>35.00</ans:valorInformado>
+          <ans:valorProcessado>35.00</ans:valorProcessado>
+          <ans:valorLiberado>35.00</ans:valorLiberado>
+          <ans:valorGlosa>0.00</ans:valorGlosa>
+        </ans:dadosProcedimento>
+      </ans:dadosGuia>
+    </ans:demonstrativoDetalhado>
+
+    <ans:demonstrativoDetalhado>
+      <ans:dadosGuia>
+        <ans:numeroGuiaPrestador>2026102</ans:numeroGuiaPrestador>
+        <ans:numeroGuiaOperadora>OP-55430102</ans:numeroGuiaOperadora>
+        <ans:dataAtendimento>2026-08-03</ans:dataAtendimento>
+        <ans:dadosBeneficiario>
+          <ans:numeroCarteira>44220058144</ans:numeroCarteira>
+          <ans:nomeBeneficiario>Sérgio Antunes Moreira</ans:nomeBeneficiario>
+        </ans:dadosBeneficiario>
+        <ans:dadosProcedimento>
+          <ans:codigoProcedimento>81000450</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Profilaxia - polimento coronário</ans:descricaoProcedimento>
+          <ans:cboProfissional>223208</ans:cboProfissional>
+          <ans:valorInformado>240.00</ans:valorInformado>
+          <ans:valorProcessado>240.00</ans:valorProcessado>
+          <ans:valorLiberado>0.00</ans:valorLiberado>
+          <ans:valorGlosa>240.00</ans:valorGlosa>
+          <ans:codigoGlosa>1702</ans:codigoGlosa>
+        </ans:dadosProcedimento>
+      </ans:dadosGuia>
+    </ans:demonstrativoDetalhado>
+
+  </ans:demonstrativosDetalhados>
+</ans:mensagemTISS>

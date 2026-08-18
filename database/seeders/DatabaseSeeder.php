@@ -30,6 +30,14 @@ class DatabaseSeeder extends Seeder
             'role' => 'owner',
         ]);
 
+        \App\Models\User::factory()->create([
+            'name' => 'Operador GlosasAI',
+            'email' => 'admin@glosasai.com.br',
+            'password' => bcrypt('password'),
+            'clinic_id' => null,
+            'role' => 'super_admin',
+        ]);
+
         $this->call(DenialReasonCodeSeeder::class);
         $this->call(AppealTemplateSeeder::class);
     }

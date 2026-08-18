@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Arquivo PROPOSITALMENTE quebrado: a tag <ans:cabecalho> nunca é fechada e
+  <ans:registroANS> fecha com outro nome. O DOMDocument falha ao carregar, o
+  ProcessTissUploadJob lança RuntimeException, o upload fica com status "failed"
+  e um registro de categoria claim_processing aparece no painel de erros.
+
+  Suba este arquivo 2 ou 3 vezes para ver o card "Erros recorrentes" contando as
+  ocorrências e o botão "Resolver todos".
+-->
+<ans:mensagemTISS xmlns:ans="http://www.ans.gov.br/padroes/tiss/schemas">
+  <ans:cabecalho>
+    <ans:registroANS>999003</ans:numeroErrado>
+
+  <ans:demonstrativosDetalhados>
+    <ans:demonstrativoDetalhado>
+      <ans:dadosGuia>
+        <ans:numeroGuiaPrestador>9999001
+      </ans:dadosGuia>
