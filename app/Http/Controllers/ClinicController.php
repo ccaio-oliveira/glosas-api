@@ -13,8 +13,6 @@ class ClinicController extends Controller
 
     public function update(Request $request)
     {
-        abort_unless($request->user()->isOwner(), 403);
-
         $data = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'cnpj' => ['required', 'string', 'max:255'],
@@ -32,8 +30,6 @@ class ClinicController extends Controller
 
     public function updatePlan(Request $request)
     {
-        abort_unless($request->user()->isOwner(), 403);
-
         $data = $request->validate([
             'plan' => ['required', 'in:starter,professional,enterprise'],
         ]);
