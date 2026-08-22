@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\AppealTemplate;
+use App\Models\AuditLog;
 use App\Models\Denial;
+use App\Support\StatusLabels;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -50,7 +52,18 @@ class DenialController extends Controller
             'status' => ['required', 'in:new,pending,appealed,recovered,rejected'],
         ]);
 
+        $from = $denial->status;
         $denial->update($data);
+
+        if ($from !== $data['status']) {
+            AuditLog::record(
+                action: 'denial.status_changed',
+                auditable: $denial,
+                summary: 'Status da glosa: ' . StatusLabels::denial($from) . ' → ' . StatusLabels::denial($data['status']),
+                changes: ['status' => ['from' => $from, 'to' => $data['status']]] ,
+                denialId: $denial->id,
+            );
+        }
 
         return $this->present($denial->fresh('claimItem.claim.payer'));
     }
@@ -80,6 +93,13 @@ class DenialController extends Controller
         ->orderByDesc('total')
         ->limit(20)
         ->get();
+    }
+
+    public function audit(Denial $denial)
+    {
+        return AuditLog::where('denial_id', $denial->id)
+        ->orderByDesc('id')
+        ->get(['id', 'action', 'user_name', 'summary', 'changes', 'created_at']);
     }
 
     private function present(Denial $denial): array

@@ -30,6 +30,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/denials', [DenialController::class, 'index']);
     Route::get('/denials/{denial}', [DenialController::class, 'show']);
     Route::get('/denials/{denial}/appeal/pdf', [AppealController::class, 'pdf']);
+    Route::get('/denials/{denial}/audit', [DenialController::class, 'audit']);
     Route::get('/appeals/summary', [AppealListController::class, 'summary']);
     Route::get('/appeals', [AppealListController::class, 'index']);
 

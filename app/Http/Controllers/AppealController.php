@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appeal;
+use App\Models\AuditLog;
 use App\Models\Denial;
 use App\Services\Appeals\AppealGenerator;
 use App\Services\Appeals\AppealPdfGenerator;
@@ -29,6 +30,13 @@ class AppealController extends Controller
             ]);
         }
 
+        AuditLog::record(
+            action: 'appeal.text_edited',
+            auditable: $appeal,
+            summary: 'Texto do recurso editado manualmente',
+            denialId: $denial->id,
+        );
+
         return $appeal;
     }
 
@@ -45,6 +53,13 @@ class AppealController extends Controller
         ]);
 
         $denial->update(['status' => 'appealed']);
+
+        AuditLog::record(
+            action: 'appeal.submitted',
+            auditable: $appeal,
+            summary: 'Recurso marcado como enviado ao convênio (envio manual)',
+            denialId: $denial->id,
+        );
 
         return $appeal;
     }
@@ -81,6 +96,14 @@ class AppealController extends Controller
                 'status' => 'draft',
             ]);
         }
+
+        AuditLog::record(
+            action: 'appeal.generated',
+            auditable: $appeal,
+            summary: 'Recurso gerado pelo modelo "' . $result->template->name . '" (' . $result->source . ')',
+            changes: ['template' => $result->template->name, 'source' => $result->source],
+            denialId: $denial->id,
+        );
 
         return response()->json([
             'appeal' => $appeal,

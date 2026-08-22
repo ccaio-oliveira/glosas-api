@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Jobs\ProcessTissUploadJob;
 use App\Models\Appeal;
+use App\Models\AuditLog;
 use App\Models\Claim;
 use App\Models\ClaimItem;
 use App\Models\Denial;
@@ -65,6 +66,16 @@ class ReprocessTissUpload extends Command
             if ($appeal->document_path && Storage::exists($appeal->document_path)) {
                 Storage::delete($appeal->document_path);
             }
+        }
+
+        foreach ($denialIds as $denialId) {
+            AuditLog::record(
+                action: 'denial.deleted_by_reprocess',
+                auditable: $upload,
+                summary: 'Glosa apagada no reprocessamento do arquivo "' . $upload->original_filename . '"' . ($submitted->isNotEmpty() ? ' - havia recurso já enviado ao convênio' : ''),
+                denialId: $denialId,
+                clinicId: $upload->clinic_id,
+            );
         }
 
         Claim::withoutGlobalScope('clinic')->whereIn('id', $claimIds)->delete();

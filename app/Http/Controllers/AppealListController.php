@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appeal;
+use App\Models\AuditLog;
+use App\Support\StatusLabels;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -65,6 +67,8 @@ class AppealListController extends Controller
 
         $isTerminal = in_array($data['status'], ['accepted', 'rejected'], true);
 
+        $from = $appeal->status;
+
         $appeal->update([
             'status' => $data['status'],
             'responded_at' => $isTerminal ? ($appeal->responded_at ?? now()) : null,
@@ -79,6 +83,16 @@ class AppealListController extends Controller
 
         if ($denialStatus) {
             $appeal->denial?->update(['status' => $denialStatus]);
+        }
+
+        if ($from !== $data['status']) {
+            AuditLog::record(
+                action: 'appeal.status_changed',
+                auditable: $appeal,
+                summary: 'Recurso: ' . StatusLabels::appeal($from) . ' → ' . StatusLabels::appeal($data['status']) . ($denialStatus ? ' (glosa passou a ' . StatusLabels::denial($denialStatus) . ')' : ''),
+                changes: ['status' => ['from' => $from, 'to' => $data['status']]],
+                denialId: $appeal->denial_id,
+            );
         }
 
         return $this->present($appeal->fresh('denial.claimItem.claim.payer'));
