@@ -6,7 +6,6 @@ use App\Models\Appeal;
 use App\Models\AuditLog;
 use App\Support\StatusLabels;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class AppealListController extends Controller
 {
@@ -43,9 +42,14 @@ class AppealListController extends Controller
         $accepted = $all->where('status', 'accepted');
         $answered = $all->whereIn('status', ['accepted', 'rejected']);
 
-        $avgDays = Appeal::whereNotNull('submitted_at')->whereNotNull('responded_at')
-        ->select(DB::raw('AVG(DATEDIFF(responded_at,submitted_at)) as avg_days'))
-        ->value('avg_days');
+        // Média em PHP, não com DATEDIFF: aquela função é exclusiva do MySQL e
+        // quebrava o endpoint inteiro em qualquer outro banco, inclusive no
+        // sqlite dos testes. A coleção já está carregada aqui.
+        $responded = $all->filter(fn (Appeal $a) => $a->submitted_at && $a->responded_at);
+
+        $avgDays = $responded->isNotEmpty()
+            ? (int) round($responded->avg(fn (Appeal $a) => $a->submitted_at->diffInDays($a->responded_at)))
+            : null;
 
         return [
             'total' => $all->count(),
@@ -54,8 +58,8 @@ class AppealListController extends Controller
             'awaiting_amount' => (float) $awaiting->sum(fn ($a) => (float) ($a->denial->amount ?? 0)),
             'recovered_count' => $accepted->count(),
             'recovered_amount' => (float) $accepted->sum(fn ($a) => (float) ($a->denial->amount ?? 0)),
-            'success_rate' => $answered->count() ? round($accepted->count() / $answered->count() * 100) : null,
-            'avg_response_days' => $avgDays !== null ? (int) round($avgDays) : null,
+            'success_rate' => $answered->count() ? (int) round($accepted->count() / $answered->count() * 100) : null,
+            'avg_response_days' => $avgDays,
         ];
     }
 
