@@ -84,6 +84,13 @@ function makeDenial(
         ['ans_registry_code' => substr(md5($payerName), 0, 6)],
     );
 
+    // O vínculo por clínica é o que a validação de payer_id exige — o job real
+    // sempre cria, então o helper precisa criar também.
+    App\Models\ClinicPayer::withoutGlobalScope('clinic')->firstOrCreate(
+        ['clinic_id' => $clinic->id, 'payer_id' => $payer->id],
+        ['integration_type' => 'manual'],
+    );
+
     $amount = $attributes['amount'] ?? 500.00;
 
     $claim = App\Models\Claim::withoutGlobalScope('clinic')->create([

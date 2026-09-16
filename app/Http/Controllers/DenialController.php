@@ -34,6 +34,14 @@ class DenialController extends Controller
             });
         }
 
+        // Recorte por data do atendimento — é por ela que o faturista procura
+        // quando o paciente liga. A data do upload não diz nada para ele.
+        foreach (['from' => '>=', 'to' => '<='] as $param => $operator) {
+            if ($date = $request->query($param)) {
+                $query->whereHas('claimItem.claim', fn ($c) => $c->whereDate('service_date', $operator, $date));
+            }
+        }
+
         return $query->latest('identified_at')->get()->map(fn (Denial $d) => $this->present($d));
     }
 
@@ -112,6 +120,7 @@ class DenialController extends Controller
             'claim_number' => $claim?->claim_number,
             'patient_name' => $claim?->patient_name,
             'payer_name' => $claim?->payer?->name,
+            'service_date' => $claim?->service_date?->toDateString(),
             'procedure_code' => $item?->procedure_code,
             'procedure_description' => $item?->description,
             'billed_amount' => (float) ($item?->billed_amount ?? 0),

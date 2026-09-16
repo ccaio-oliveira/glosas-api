@@ -8,9 +8,29 @@ use Illuminate\Validation\Rule;
 
 class ClaimController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return Claim::with('payer')->latest()->get();
+        $query = Claim::with('payer');
+
+        if ($search = $request->query('search')) {
+            $query->where(function ($q) use ($search) {
+                $q->where('patient_name', 'like', "%{$search}%")
+                    ->orWhere('claim_number', 'like', "%{$search}%");
+            });
+        }
+
+        foreach (['from' => '>=', 'to' => '<='] as $param => $operator) {
+            if ($date = $request->query($param)) {
+                $query->whereDate('service_date', $operator, $date);
+            }
+        }
+
+        // Ordena pelo atendimento mais recente, caindo para a data de criação
+        // nas guias lançadas à mão, que podem não ter data de atendimento.
+        return $query->orderByRaw('service_date is null')
+            ->latest('service_date')
+            ->latest('id')
+            ->get();
     }
 
     public function store(Request $request)
@@ -48,6 +68,7 @@ class ClaimController extends Controller
             ],
             'claim_number' => ['required', 'string', 'max:255'],
             'patient_name' => ['required', 'string', 'max:255'],
+            'service_date' => ['nullable', 'date', 'before_or_equal:today'],
             'total_amount' => ['required', 'numeric', 'min:0'],
         ]);
     }
