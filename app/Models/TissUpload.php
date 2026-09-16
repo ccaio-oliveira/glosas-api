@@ -10,7 +10,7 @@ class TissUpload extends Model
     use BelongsToClinic;
 
     protected $fillable = [
-        'clinic_id', 'uploaded_by_user_id', 'original_filename', 'path',
+        'clinic_id', 'uploaded_by_user_id', 'original_filename', 'path', 'content_hash',
         'size_bytes', 'status', 'claims_count', 'denials_count', 'error_message'
     ];
 
