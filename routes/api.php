@@ -8,6 +8,7 @@ use App\Http\Controllers\ClaimController;
 use App\Http\Controllers\ClinicController;
 use App\Http\Controllers\DenialController;
 use App\Http\Controllers\PayerController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TissUploadController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/denials/{denial}/audit', [DenialController::class, 'audit']);
     Route::get('/appeals/summary', [AppealListController::class, 'summary']);
     Route::get('/appeals', [AppealListController::class, 'index']);
+    Route::get('/reports/recovery/pdf', [ReportController::class, 'recoveryPdf']);
+    Route::get('/reports/recovery', [ReportController::class, 'recovery']);
 
     // ---- Operação: owner e biller ----
     Route::middleware('can:operate')->group(function () {
