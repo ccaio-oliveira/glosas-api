@@ -186,3 +186,26 @@ it('usa a data do processamento como identified_at', function () {
     expect($datas)->toHaveCount(1)
         ->and($datas->first()->toDateString())->toBe(now()->toDateString());
 });
+
+it('extrai a data de atendimento de cada guia do XML', function () {
+    processFixture($this->clinic, 'demonstrativo-valido.xml');
+
+    $datas = Claim::withoutGlobalScope('clinic')
+        ->orderBy('claim_number')->pluck('service_date')
+        ->map(fn ($d) => $d?->toDateString())->all();
+
+    // as quatro datas de dataAtendimento da fixture, não a data de hoje
+    expect($datas)->toBe(['2026-07-14', '2026-07-16', '2026-07-21', '2026-07-28']);
+});
+
+it('o relatório passa a enxergar as glosas no mês do atendimento', function () {
+    processFixture($this->clinic, 'demonstrativo-valido.xml');
+
+    $this->actingAs(makeUser($this->clinic));
+    $r = (new App\Services\Reports\RecoveryReport())->data();
+
+    // todos os atendimentos da fixture são de julho, mesmo processados hoje
+    expect($r['by_month'])->toHaveCount(1)
+        ->and($r['by_month'][0]['label'])->toBe('jul/2026')
+        ->and($r['by_month'][0]['denied_amount'])->toBe(1492.00);
+});

@@ -46,6 +46,7 @@ class ProcessTissUploadJob implements ShouldQueue
                         'tiss_upload_id' => $upload->id,
                         'claim_number' => $parsedClaim['claim_number'],
                         'patient_name' => $parsedClaim['patient_name'],
+                        'service_date' => $parsedClaim['service_date'] ?? null,
                         'xml_path' => $upload->path,
                         'total_amount' => $total,
                         'status' => 'processed',

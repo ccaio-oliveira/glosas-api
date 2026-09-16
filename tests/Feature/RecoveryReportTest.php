@@ -106,3 +106,36 @@ it('recusa período com data final anterior à inicial', function () {
     $this->getJson('/api/reports/recovery?from=2026-08-01&to=2026-07-01')
         ->assertStatus(422);
 });
+
+it('ancora a glosa na data do atendimento, não na do upload', function () {
+    // atendida em maio, glosa só identificada em agosto — o caso real:
+    // a operadora responde semanas depois
+    makeDenial($this->clinic, [
+        'amount' => 400, 'status' => 'new',
+        'service_date' => '2026-05-12', 'identified_at' => '2026-08-20',
+    ]);
+
+    $r = (new RecoveryReport())->data();
+
+    expect($r['by_month'])->toHaveCount(1)
+        ->and($r['by_month'][0]['label'])->toBe('mai/2026');
+});
+
+it('filtra o período pela data do atendimento', function () {
+    makeDenial($this->clinic, ['amount' => 400, 'service_date' => '2026-05-12', 'identified_at' => '2026-08-20']);
+    makeDenial($this->clinic, ['amount' => 900, 'service_date' => '2026-08-03', 'identified_at' => '2026-08-20']);
+
+    $maio = (new RecoveryReport('2026-05-01', '2026-05-31'))->data();
+    $agosto = (new RecoveryReport('2026-08-01', '2026-08-31'))->data();
+
+    expect($maio['totals']['denied_amount'])->toBe(400.0)
+        ->and($agosto['totals']['denied_amount'])->toBe(900.0);
+});
+
+it('cai para a data de identificação quando o XML não trouxe a do atendimento', function () {
+    makeDenial($this->clinic, ['amount' => 100, 'service_date' => null, 'identified_at' => '2026-07-09']);
+
+    $r = (new RecoveryReport())->data();
+
+    expect($r['by_month'][0]['label'])->toBe('jul/2026');
+});

@@ -4,6 +4,7 @@ namespace App\Services\Reports;
 
 use App\Models\Denial;
 use App\Support\StatusLabels;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 
 /**
@@ -32,9 +33,9 @@ class RecoveryReport
     public function data(): array
     {
         $denials = Denial::with('claimItem.claim.payer')
-            ->when($this->from, fn ($q) => $q->whereDate('identified_at', '>=', $this->from))
-            ->when($this->to, fn ($q) => $q->whereDate('identified_at', '<=', $this->to))
-            ->get();
+            ->get()
+            ->filter(fn (Denial $d) => $this->withinPeriod($this->referenceDate($d)))
+            ->values();
 
         return [
             'period' => ['from' => $this->from, 'to' => $this->to],
@@ -98,10 +99,34 @@ class RecoveryReport
             ->all();
     }
 
+    /**
+     * Data que ancora a glosa no tempo: a do atendimento, não a do upload.
+     * A operadora responde semanas depois, e agrupar pelo upload faria um
+     * backlog de seis meses aparecer todo no mês em que foi importado.
+     * Cai para identified_at quando o XML não trouxe dataAtendimento.
+     */
+    private function referenceDate(Denial $denial): ?Carbon
+    {
+        return $denial->claimItem?->claim?->service_date ?? $denial->identified_at;
+    }
+
+    private function withinPeriod(?Carbon $date): bool
+    {
+        if ($date === null) {
+            return $this->from === null && $this->to === null;
+        }
+
+        if ($this->from && $date->lt(Carbon::parse($this->from)->startOfDay())) {
+            return false;
+        }
+
+        return ! ($this->to && $date->gt(Carbon::parse($this->to)->endOfDay()));
+    }
+
     private function byMonth(Collection $denials): array
     {
         return $denials
-            ->groupBy(fn (Denial $d) => $d->identified_at?->format('Y-m') ?? '—')
+            ->groupBy(fn (Denial $d) => $this->referenceDate($d)?->format('Y-m') ?? '—')
             ->map(fn (Collection $group, string $month) => [
                 'month' => $month,
                 'label' => $this->monthLabel($month),

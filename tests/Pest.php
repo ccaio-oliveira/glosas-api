@@ -90,6 +90,7 @@ function makeDenial(
         'clinic_id' => $clinic->id,
         'payer_id' => $payer->id,
         'claim_number' => (string) random_int(100000, 999999),
+        'service_date' => $attributes['service_date'] ?? null,
         'patient_name' => $attributes['patient_name'] ?? 'Paciente Teste',
         'total_amount' => $amount,
         'status' => 'processed',

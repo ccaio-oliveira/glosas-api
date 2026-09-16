@@ -10,7 +10,12 @@ class Claim extends Model
 {
     use HasFactory, BelongsToClinic;
 
-    protected $fillable = ['clinic_id', 'payer_id', 'tiss_upload_id', 'claim_number', 'patient_name', 'xml_path', 'total_amount', 'status'];
+    protected $fillable = ['clinic_id', 'payer_id', 'tiss_upload_id', 'claim_number', 'service_date', 'patient_name', 'xml_path', 'total_amount', 'status'];
+
+    protected function casts(): array
+    {
+        return ['service_date' => 'date'];
+    }
 
     public function payer()
     {

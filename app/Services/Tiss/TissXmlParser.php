@@ -4,6 +4,7 @@ namespace App\Services\Tiss;
 
 use DOMDocument;
 use DOMNode;
+use DateTimeImmutable;
 use DOMXPath;
 use RuntimeException;
 
@@ -57,8 +58,29 @@ class TissXmlParser
         return [
             'claim_number' => $claimNumber,
             'patient_name' => $this->firstValue($xpath, $guiaNode, ['nomeBeneficiario', 'nomeSegurado', 'nome']) ?? 'Não informado',
+            'service_date' => $this->firstDate($xpath, $guiaNode, ['dataAtendimento', 'dataRealizacao', 'dataExecucao', 'dataSolicitacao']),
             'items' => $items,
         ];
+    }
+
+    /** Aceita AAAA-MM-DD e DD/MM/AAAA — operadoras divergem no formato. */
+    private function firstDate(DOMXPath $xpath, DOMNode $context, array $names): ?string
+    {
+        $raw = $this->firstValue($xpath, $context, $names);
+
+        if ($raw === null) {
+            return null;
+        }
+
+        foreach (['Y-m-d', 'd/m/Y', 'Y-m-d\\TH:i:s'] as $format) {
+            $date = DateTimeImmutable::createFromFormat($format, trim($raw));
+
+            if ($date !== false) {
+                return $date->format('Y-m-d');
+            }
+        }
+
+        return null;
     }
 
     private function parseItem(DOMXPath $xpath, DOMNode $node): ?array
