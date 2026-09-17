@@ -118,13 +118,23 @@ class TissXmlParser
         return $xpath->query("{$prefix}*[{$condition}]", $context) ?: [];
     }
 
+    /**
+     * Procura um nome de cada vez, na ordem dada — a lista é de preferência.
+     *
+     * Consultar todos num XPath só com `or` devolveria em ordem do *documento*:
+     * para `['valorInformado', 'valorTotal']`, o que aparecesse primeiro no XML
+     * venceria, não o preferido. Nas fixtures atuais dava no mesmo, mas quebraria
+     * silenciosamente num arquivo de operadora com os dois campos fora de ordem.
+     */
     private function firstValue(DOMXPath $xpath, ?DOMNode $context, array $names): ?string
     {
-        foreach ($this->nodes($xpath, $context, $names) as $node) {
-            $value = trim($node->textContent);
+        foreach ($names as $name) {
+            foreach ($this->nodes($xpath, $context, [$name]) as $node) {
+                $value = trim($node->textContent);
 
-            if ($value !== '') {
-                return $value;
+                if ($value !== '') {
+                    return $value;
+                }
             }
         }
 

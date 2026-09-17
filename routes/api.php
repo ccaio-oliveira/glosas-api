@@ -8,6 +8,7 @@ use App\Http\Controllers\ClaimController;
 use App\Http\Controllers\ClinicController;
 use App\Http\Controllers\DenialController;
 use App\Http\Controllers\PayerController;
+use App\Http\Controllers\PreventiveController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TissUploadController;
 use App\Http\Controllers\UserController;
@@ -36,6 +37,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/appeals', [AppealListController::class, 'index']);
     Route::get('/reports/recovery/pdf', [ReportController::class, 'recoveryPdf']);
     Route::get('/reports/recovery', [ReportController::class, 'recovery']);
+
+    // POST, mas não muda nada: analisa um XML e devolve o parecer. Fica na
+    // leitura porque o critério dos grupos é escrita de dado, não verbo HTTP.
+    Route::get('/preventive/rules', [PreventiveController::class, 'rules']);
+    Route::post('/preventive/validate', [PreventiveController::class, 'validateGuide']);
 
     // ---- Operação: owner e biller ----
     Route::middleware('can:operate')->group(function () {

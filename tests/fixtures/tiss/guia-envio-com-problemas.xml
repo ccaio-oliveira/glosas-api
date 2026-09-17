@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Lote de guias de ENVIO (prestador → operadora), para o Faturamento Preventivo.
+  Diferente dos demonstrativos: aqui não há valorGlosa, porque a operadora
+  ainda não respondeu.
+
+  Problemas PROPOSITAIS, um por regra ativa:
+
+  Guia 3010001 — completa e correta. Deve passar sem achado estrutural.
+  Guia 3010002 — sem nomeBeneficiario; procedimento sem CBO; 2 × 90,00 declarado
+                 como 200,00 (aritmética do item não fecha).
+  Guia 3010003 — data de atendimento no futuro; procedimento sem código;
+                 soma dos itens (150,00) não fecha com o valorTotalGeral (400,00).
+  Guia 3010004 — usa o código 81000234, que as fixtures de demonstrativo já
+                 glosaram — dispara o alerta de histórico.
+-->
+<ans:mensagemTISS xmlns:ans="http://www.ans.gov.br/padroes/tiss/schemas">
+  <ans:cabecalho>
+    <ans:identificacaoTransacao>
+      <ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao>
+      <ans:sequencialTransacao>771002</ans:sequencialTransacao>
+      <ans:dataRegistroTransacao>2026-09-10</ans:dataRegistroTransacao>
+    </ans:identificacaoTransacao>
+    <ans:origem>
+      <ans:codigoPrestadorNaOperadora>PRE-004821</ans:codigoPrestadorNaOperadora>
+    </ans:origem>
+    <ans:destino>
+      <ans:registroANS>999001</ans:registroANS>
+    </ans:destino>
+    <ans:versaoPadrao>3.05.00</ans:versaoPadrao>
+  </ans:cabecalho>
+
+  <ans:prestadorParaOperadora>
+    <ans:loteGuias>
+
+      <!-- Guia correta -->
+      <ans:guiaOdontologia>
+        <ans:numeroGuiaPrestador>3010001</ans:numeroGuiaPrestador>
+        <ans:dadosBeneficiario>
+          <ans:numeroCarteira>88110023456</ans:numeroCarteira>
+          <ans:nomeBeneficiario>Patrícia Gomes Ferreira</ans:nomeBeneficiario>
+        </ans:dadosBeneficiario>
+        <ans:dataAtendimento>2026-09-08</ans:dataAtendimento>
+        <ans:procedimentosExecutados>
+          <ans:procedimentoExecutado>
+            <ans:codigoProcedimento>81000450</ans:codigoProcedimento>
+            <ans:descricaoProcedimento>Profilaxia - polimento coronário</ans:descricaoProcedimento>
+            <ans:cboProfissional>223208</ans:cboProfissional>
+            <ans:quantidadeExecutada>1</ans:quantidadeExecutada>
+            <ans:valorUnitario>90.00</ans:valorUnitario>
+            <ans:valorTotal>90.00</ans:valorTotal>
+          </ans:procedimentoExecutado>
+        </ans:procedimentosExecutados>
+        <ans:valorTotalGeral>90.00</ans:valorTotalGeral>
+      </ans:guiaOdontologia>
+
+      <!-- Sem beneficiário, sem CBO, aritmética do item furada -->
+      <ans:guiaOdontologia>
+        <ans:numeroGuiaPrestador>3010002</ans:numeroGuiaPrestador>
+        <ans:dadosBeneficiario>
+          <ans:numeroCarteira>88110099871</ans:numeroCarteira>
+        </ans:dadosBeneficiario>
+        <ans:dataAtendimento>2026-09-09</ans:dataAtendimento>
+        <ans:procedimentosExecutados>
+          <ans:procedimentoExecutado>
+            <ans:codigoProcedimento>81000901</ans:codigoProcedimento>
+            <ans:descricaoProcedimento>Aplicação tópica de flúor</ans:descricaoProcedimento>
+            <ans:quantidadeExecutada>2</ans:quantidadeExecutada>
+            <ans:valorUnitario>90.00</ans:valorUnitario>
+            <ans:valorTotal>200.00</ans:valorTotal>
+          </ans:procedimentoExecutado>
+        </ans:procedimentosExecutados>
+        <ans:valorTotalGeral>200.00</ans:valorTotalGeral>
+      </ans:guiaOdontologia>
+
+      <!-- Data no futuro, procedimento sem código, total da guia não fecha -->
+      <ans:guiaOdontologia>
+        <ans:numeroGuiaPrestador>3010003</ans:numeroGuiaPrestador>
+        <ans:dadosBeneficiario>
+          <ans:numeroCarteira>88110044502</ans:numeroCarteira>
+          <ans:nomeBeneficiario>Eduardo Martins Rocha</ans:nomeBeneficiario>
+        </ans:dadosBeneficiario>
+        <ans:dataAtendimento>2027-01-15</ans:dataAtendimento>
+        <ans:procedimentosExecutados>
+          <ans:procedimentoExecutado>
+            <ans:descricaoProcedimento>Consulta odontológica inicial</ans:descricaoProcedimento>
+            <ans:cboProfissional>223208</ans:cboProfissional>
+            <ans:quantidadeExecutada>1</ans:quantidadeExecutada>
+            <ans:valorUnitario>150.00</ans:valorUnitario>
+            <ans:valorTotal>150.00</ans:valorTotal>
+          </ans:procedimentoExecutado>
+        </ans:procedimentosExecutados>
+        <ans:valorTotalGeral>400.00</ans:valorTotalGeral>
+      </ans:guiaOdontologia>
+
+      <!-- Código com histórico de glosa nesta clínica -->
+      <ans:guiaOdontologia>
+        <ans:numeroGuiaPrestador>3010004</ans:numeroGuiaPrestador>
+        <ans:dadosBeneficiario>
+          <ans:numeroCarteira>88110077310</ans:numeroCarteira>
+          <ans:nomeBeneficiario>Luciana Alves Prado</ans:nomeBeneficiario>
+        </ans:dadosBeneficiario>
+        <ans:dataAtendimento>2026-09-10</ans:dataAtendimento>
+        <ans:procedimentosExecutados>
+          <ans:procedimentoExecutado>
+            <ans:codigoProcedimento>81000234</ans:codigoProcedimento>
+            <ans:descricaoProcedimento>Restauração em resina composta - 2 faces</ans:descricaoProcedimento>
+            <ans:denteRegiao>36</ans:denteRegiao>
+            <ans:faces>
+              <ans:face>O</ans:face>
+              <ans:face>M</ans:face>
+            </ans:faces>
+            <ans:cboProfissional>223208</ans:cboProfissional>
+            <ans:quantidadeExecutada>1</ans:quantidadeExecutada>
+            <ans:valorUnitario>180.00</ans:valorUnitario>
+            <ans:valorTotal>180.00</ans:valorTotal>
+          </ans:procedimentoExecutado>
+        </ans:procedimentosExecutados>
+        <ans:valorTotalGeral>180.00</ans:valorTotalGeral>
+      </ans:guiaOdontologia>
+
+    </ans:loteGuias>
+  </ans:prestadorParaOperadora>
+</ans:mensagemTISS>
