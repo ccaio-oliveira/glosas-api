@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Lote de ENVIO para testar a validação contra a Tabela 22 no Faturamento Preventivo.
+  Cole o conteúdo na tela /preventive.
+
+  Guia 4020001 — código 81000234, que NÃO existe na Tabela 22 (era o código
+                 inventado das fixtures antigas). Deve acusar erro "Tabela 22".
+  Guia 4020002 — código 85100196, real e vigente. Não deve acusar nada de TUSS.
+-->
+<ans:mensagemTISS xmlns:ans="http://www.ans.gov.br/padroes/tiss/schemas">
+  <ans:cabecalho>
+    <ans:identificacaoTransacao>
+      <ans:tipoTransacao>ENVIO_LOTE_GUIAS</ans:tipoTransacao>
+    </ans:identificacaoTransacao>
+    <ans:destino><ans:registroANS>999001</ans:registroANS></ans:destino>
+  </ans:cabecalho>
+  <ans:prestadorParaOperadora>
+    <ans:loteGuias>
+      <ans:guiaOdontologia>
+        <ans:numeroGuiaPrestador>4020001</ans:numeroGuiaPrestador>
+        <ans:dadosBeneficiario>
+          <ans:numeroCarteira>88110023456</ans:numeroCarteira>
+          <ans:nomeBeneficiario>Marcos Vieira Lopes</ans:nomeBeneficiario>
+        </ans:dadosBeneficiario>
+        <ans:dataAtendimento>2026-09-12</ans:dataAtendimento>
+        <ans:procedimentosExecutados>
+          <ans:procedimentoExecutado>
+            <ans:codigoProcedimento>81000234</ans:codigoProcedimento>
+            <ans:descricaoProcedimento>Restauração em resina composta - 2 faces</ans:descricaoProcedimento>
+            <ans:cboProfissional>223208</ans:cboProfissional>
+            <ans:quantidadeExecutada>1</ans:quantidadeExecutada>
+            <ans:valorUnitario>180.00</ans:valorUnitario>
+            <ans:valorTotal>180.00</ans:valorTotal>
+          </ans:procedimentoExecutado>
+        </ans:procedimentosExecutados>
+        <ans:valorTotalGeral>180.00</ans:valorTotalGeral>
+      </ans:guiaOdontologia>
+      <ans:guiaOdontologia>
+        <ans:numeroGuiaPrestador>4020002</ans:numeroGuiaPrestador>
+        <ans:dadosBeneficiario>
+          <ans:numeroCarteira>88110099871</ans:numeroCarteira>
+          <ans:nomeBeneficiario>Renata Souza Campos</ans:nomeBeneficiario>
+        </ans:dadosBeneficiario>
+        <ans:dataAtendimento>2026-09-12</ans:dataAtendimento>
+        <ans:procedimentosExecutados>
+          <ans:procedimentoExecutado>
+            <ans:codigoProcedimento>85100196</ans:codigoProcedimento>
+            <ans:descricaoProcedimento>Restauração em resina fotopolimerizável 1 face</ans:descricaoProcedimento>
+            <ans:cboProfissional>223208</ans:cboProfissional>
+            <ans:quantidadeExecutada>1</ans:quantidadeExecutada>
+            <ans:valorUnitario>120.00</ans:valorUnitario>
+            <ans:valorTotal>120.00</ans:valorTotal>
+          </ans:procedimentoExecutado>
+        </ans:procedimentosExecutados>
+        <ans:valorTotalGeral>120.00</ans:valorTotalGeral>
+      </ans:guiaOdontologia>
+    </ans:loteGuias>
+  </ans:prestadorParaOperadora>
+</ans:mensagemTISS>

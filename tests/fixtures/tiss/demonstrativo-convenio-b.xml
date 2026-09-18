@@ -6,6 +6,10 @@
 
   Resultado esperado: 2 guias · 3 itens · 2 glosas · R$ 1.130,00 glosados.
   Códigos de procedimento reais (Tabela 22 do TUSS).
+
+  A glosa do Sérgio (84000198) usa de propósito uma descrição própria da clínica,
+  "Limpeza e polimento (profilaxia)", diferente da oficial "Profilaxia: polimento
+  coronário" — é o caso que o detalhe da glosa sinaliza como divergente.
 -->
 <ans:mensagemTISS xmlns:ans="http://www.ans.gov.br/padroes/tiss/schemas">
   <ans:cabecalho>
@@ -69,7 +73,7 @@
         </ans:dadosBeneficiario>
         <ans:dadosProcedimento>
           <ans:codigoProcedimento>84000198</ans:codigoProcedimento>
-          <ans:descricaoProcedimento>Profilaxia: polimento coronário</ans:descricaoProcedimento>
+          <ans:descricaoProcedimento>Limpeza e polimento (profilaxia)</ans:descricaoProcedimento>
           <ans:cboProfissional>223208</ans:cboProfissional>
           <ans:valorInformado>240.00</ans:valorInformado>
           <ans:valorProcessado>240.00</ans:valorProcessado>

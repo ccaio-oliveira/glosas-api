@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\AppealTemplate;
 use App\Models\AuditLog;
+use App\Models\ClaimItem;
 use App\Models\Denial;
+use App\Models\TussProcedure;
 use App\Support\StatusLabels;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class DenialController extends Controller
 {
@@ -51,7 +54,40 @@ class DenialController extends Controller
 
         return $this->present($denial) + [
             'appeal' => $denial->appeals->sortByDesc('id')->first(),
+            'tuss' => $this->tussComparison($denial->claimItem),
         ];
+    }
+
+    /**
+     * Compara o que a clínica mandou com a Tabela 22. Só no detalhe — na
+     * listagem seria uma consulta por linha para um dado que ninguém lê ali.
+     *
+     * Descrição divergente da oficial é motivo comum de glosa, e código que
+     * nem existe na tabela quase sempre é a própria causa da recusa.
+     */
+    private function tussComparison(?ClaimItem $item): ?array
+    {
+        if (! $item?->procedure_code) {
+            return null;
+        }
+
+        $official = TussProcedure::where('code', $item->procedure_code)->first();
+
+        return [
+            'found' => $official !== null,
+            'official_description' => $official?->description,
+            'description_matches' => $official
+                ? $this->normalize($official->description) === $this->normalize($item->description)
+                : null,
+        ];
+    }
+
+    /** Ignora caixa, acento, pontuação e espaço duplo — a Tabela 22 tem alguns. */
+    private function normalize(?string $text): string
+    {
+        $ascii = Str::lower(Str::ascii((string) $text));
+
+        return trim(preg_replace('/\s+/', ' ', preg_replace('/[^a-z0-9]+/', ' ', $ascii)));
     }
 
     public function update(Request $request, Denial $denial)
