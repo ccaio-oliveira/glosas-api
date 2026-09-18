@@ -11,8 +11,11 @@
                  como 200,00 (aritmética do item não fecha).
   Guia 3010003 — data de atendimento no futuro; procedimento sem código;
                  soma dos itens (150,00) não fecha com o valorTotalGeral (400,00).
-  Guia 3010004 — usa o código 81000234, que as fixtures de demonstrativo já
+  Guia 3010004 — usa o código 85100200, que as fixtures de demonstrativo já
                  glosaram — dispara o alerta de histórico.
+
+  Todos os códigos de procedimento são reais (Tabela 22 do TUSS), para que a
+  validação de código existente passe e os outros achados fiquem visíveis.
 -->
 <ans:mensagemTISS xmlns:ans="http://www.ans.gov.br/padroes/tiss/schemas">
   <ans:cabecalho>
@@ -43,8 +46,8 @@
         <ans:dataAtendimento>2026-09-08</ans:dataAtendimento>
         <ans:procedimentosExecutados>
           <ans:procedimentoExecutado>
-            <ans:codigoProcedimento>81000450</ans:codigoProcedimento>
-            <ans:descricaoProcedimento>Profilaxia - polimento coronário</ans:descricaoProcedimento>
+            <ans:codigoProcedimento>84000198</ans:codigoProcedimento>
+            <ans:descricaoProcedimento>Profilaxia: polimento coronário</ans:descricaoProcedimento>
             <ans:cboProfissional>223208</ans:cboProfissional>
             <ans:quantidadeExecutada>1</ans:quantidadeExecutada>
             <ans:valorUnitario>90.00</ans:valorUnitario>
@@ -63,7 +66,7 @@
         <ans:dataAtendimento>2026-09-09</ans:dataAtendimento>
         <ans:procedimentosExecutados>
           <ans:procedimentoExecutado>
-            <ans:codigoProcedimento>81000901</ans:codigoProcedimento>
+            <ans:codigoProcedimento>84000090</ans:codigoProcedimento>
             <ans:descricaoProcedimento>Aplicação tópica de flúor</ans:descricaoProcedimento>
             <ans:quantidadeExecutada>2</ans:quantidadeExecutada>
             <ans:valorUnitario>90.00</ans:valorUnitario>
@@ -103,8 +106,8 @@
         <ans:dataAtendimento>2026-09-10</ans:dataAtendimento>
         <ans:procedimentosExecutados>
           <ans:procedimentoExecutado>
-            <ans:codigoProcedimento>81000234</ans:codigoProcedimento>
-            <ans:descricaoProcedimento>Restauração em resina composta - 2 faces</ans:descricaoProcedimento>
+            <ans:codigoProcedimento>85100200</ans:codigoProcedimento>
+            <ans:descricaoProcedimento>Restauração em resina fotopolimerizável 2 faces</ans:descricaoProcedimento>
             <ans:denteRegiao>36</ans:denteRegiao>
             <ans:faces>
               <ans:face>O</ans:face>

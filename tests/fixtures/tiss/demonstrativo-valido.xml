@@ -2,12 +2,10 @@
 <!--
   Demonstrativo de Análise de Conta — arquivo de TESTE do GlosasAI.
 
-  Dados reais:  códigos de glosa (Tabela 38), dentes (Tabela 28),
-                faces do dente (Tabela 32) e CBO (Tabela 24) do padrão TISS.
-  Dados fictícios: registro ANS, pacientes, valores e os códigos de
-                procedimento — a Tabela 22 (TUSS de procedimentos) é publicação
-                separada e não está entre os insumos do projeto. Troque por
-                códigos reais quando tiver um demonstrativo de operadora.
+  Dados reais:  códigos de procedimento (Tabela 22 do TUSS), de glosa
+                (Tabela 38), dentes (Tabela 28), faces (Tabela 32) e CBO
+                (Tabela 24) do padrão TISS.
+  Dados fictícios: apenas registro ANS, nomes de paciente e valores.
 
   Resultado esperado: 4 guias · 9 itens · 6 glosas · R$ 1.492,00 glosados.
 -->
@@ -40,8 +38,8 @@
           <ans:nomeBeneficiario>Maria Oliveira Santos</ans:nomeBeneficiario>
         </ans:dadosBeneficiario>
         <ans:dadosProcedimento>
-          <ans:codigoProcedimento>81000234</ans:codigoProcedimento>
-          <ans:descricaoProcedimento>Restauração em resina composta - 2 faces</ans:descricaoProcedimento>
+          <ans:codigoProcedimento>85100200</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Restauração em resina fotopolimerizável 2 faces</ans:descricaoProcedimento>
           <ans:denteRegiao>36</ans:denteRegiao>
           <ans:faces>
             <ans:face>O</ans:face>
@@ -55,8 +53,8 @@
           <ans:codigoGlosa>1402</ans:codigoGlosa>
         </ans:dadosProcedimento>
         <ans:dadosProcedimento>
-          <ans:codigoProcedimento>81000450</ans:codigoProcedimento>
-          <ans:descricaoProcedimento>Profilaxia - polimento coronário</ans:descricaoProcedimento>
+          <ans:codigoProcedimento>84000198</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Profilaxia: polimento coronário</ans:descricaoProcedimento>
           <ans:cboProfissional>223208</ans:cboProfissional>
           <ans:valorInformado>90.00</ans:valorInformado>
           <ans:valorProcessado>90.00</ans:valorProcessado>
@@ -77,8 +75,8 @@
           <ans:nomeBeneficiario>João Pereira Lima</ans:nomeBeneficiario>
         </ans:dadosBeneficiario>
         <ans:dadosProcedimento>
-          <ans:codigoProcedimento>81000789</ans:codigoProcedimento>
-          <ans:descricaoProcedimento>Tratamento endodôntico - molar</ans:descricaoProcedimento>
+          <ans:codigoProcedimento>85200158</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Tratamento endodôntico multirradicular</ans:descricaoProcedimento>
           <ans:denteRegiao>46</ans:denteRegiao>
           <ans:cboProfissional>223212</ans:cboProfissional>
           <ans:valorInformado>650.00</ans:valorInformado>
@@ -88,7 +86,7 @@
           <ans:codigoGlosa>3081</ans:codigoGlosa>
         </ans:dadosProcedimento>
         <ans:dadosProcedimento>
-          <ans:codigoProcedimento>81000112</ans:codigoProcedimento>
+          <ans:codigoProcedimento>81000421</ans:codigoProcedimento>
           <ans:descricaoProcedimento>Radiografia periapical</ans:descricaoProcedimento>
           <ans:denteRegiao>46</ans:denteRegiao>
           <ans:cboProfissional>223212</ans:cboProfissional>
@@ -111,8 +109,8 @@
           <ans:nomeBeneficiario>Ana Carolina Ribeiro</ans:nomeBeneficiario>
         </ans:dadosBeneficiario>
         <ans:dadosProcedimento>
-          <ans:codigoProcedimento>81000567</ans:codigoProcedimento>
-          <ans:descricaoProcedimento>Raspagem e alisamento radicular por sextante</ans:descricaoProcedimento>
+          <ans:codigoProcedimento>85300039</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Raspagem sub-gengival/alisamento radicular</ans:descricaoProcedimento>
           <ans:cboProfissional>223248</ans:cboProfissional>
           <ans:valorInformado>320.00</ans:valorInformado>
           <ans:valorProcessado>320.00</ans:valorProcessado>
@@ -121,7 +119,7 @@
           <ans:codigoGlosa>3052</ans:codigoGlosa>
         </ans:dadosProcedimento>
         <ans:dadosProcedimento>
-          <ans:codigoProcedimento>81000901</ans:codigoProcedimento>
+          <ans:codigoProcedimento>84000090</ans:codigoProcedimento>
           <ans:descricaoProcedimento>Aplicação tópica de flúor</ans:descricaoProcedimento>
           <ans:cboProfissional>223208</ans:cboProfissional>
           <ans:valorInformado>60.00</ans:valorInformado>
@@ -144,8 +142,8 @@
           <ans:nomeBeneficiario>Roberto Carvalho Nunes</ans:nomeBeneficiario>
         </ans:dadosBeneficiario>
         <ans:dadosProcedimento>
-          <ans:codigoProcedimento>81001023</ans:codigoProcedimento>
-          <ans:descricaoProcedimento>Coroa provisória em resina</ans:descricaoProcedimento>
+          <ans:codigoProcedimento>85400084</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Coroa provisória sem pino</ans:descricaoProcedimento>
           <ans:denteRegiao>21</ans:denteRegiao>
           <ans:cboProfissional>223208</ans:cboProfissional>
           <ans:valorInformado>450.00</ans:valorInformado>
@@ -155,7 +153,7 @@
           <ans:codigoGlosa>3021</ans:codigoGlosa>
         </ans:dadosProcedimento>
         <ans:dadosProcedimento>
-          <ans:codigoProcedimento>81000345</ans:codigoProcedimento>
+          <ans:codigoProcedimento>82000875</ans:codigoProcedimento>
           <ans:descricaoProcedimento>Exodontia simples de permanente</ans:descricaoProcedimento>
           <ans:denteRegiao>38</ans:denteRegiao>
           <ans:cboProfissional>223208</ans:cboProfissional>
@@ -166,8 +164,8 @@
           <ans:codigoGlosa>9999</ans:codigoGlosa>
         </ans:dadosProcedimento>
         <ans:dadosProcedimento>
-          <ans:codigoProcedimento>81000234</ans:codigoProcedimento>
-          <ans:descricaoProcedimento>Restauração em resina composta - 1 face</ans:descricaoProcedimento>
+          <ans:codigoProcedimento>85100196</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Restauração em resina fotopolimerizável 1 face</ans:descricaoProcedimento>
           <ans:denteRegiao>24</ans:denteRegiao>
           <ans:faces>
             <ans:face>V</ans:face>

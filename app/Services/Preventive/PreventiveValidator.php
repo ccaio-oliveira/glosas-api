@@ -5,6 +5,7 @@ namespace App\Services\Preventive;
 use App\Models\Claim;
 use App\Models\ClaimItem;
 use App\Models\Denial;
+use App\Models\TussProcedure;
 use Illuminate\Support\Collection;
 
 /**
@@ -62,11 +63,13 @@ class PreventiveValidator
         }
 
         $history = $this->history();
+        $tuss = $this->tussCatalog($inspected);
 
         foreach ($inspected['guides'] as $guide) {
             $findings = array_merge(
                 $findings,
                 $this->checkGuide($guide),
+                $this->checkAgainstTuss($guide, $tuss),
                 $this->checkAgainstHistory($guide, $history),
             );
         }
@@ -192,6 +195,66 @@ class PreventiveValidator
     }
 
     /**
+     * Só os códigos que aparecem no arquivo — a Tabela 22 tem ~6 mil linhas e
+     * não faz sentido carregar tudo para conferir meia dúzia.
+     *
+     * @return Collection<string, TussProcedure>
+     */
+    private function tussCatalog(array $inspected): Collection
+    {
+        $codes = collect($inspected['guides'])
+            ->flatMap(fn (array $g) => array_column($g['procedures'], 'code'))
+            ->filter()
+            ->unique();
+
+        return $codes->isEmpty()
+            ? collect()
+            : TussProcedure::whereIn('code', $codes)->get()->keyBy('code');
+    }
+
+    private function checkAgainstTuss(array $guide, Collection $tuss): array
+    {
+        $findings = [];
+
+        foreach ($guide['procedures'] as $procedure) {
+            $code = $procedure['code'];
+
+            if (blank($code)) {
+                continue; // já acusado como campo ausente
+            }
+
+            $official = $tuss->get($code);
+
+            if (! $official) {
+                $findings[] = $this->finding(
+                    'error', 'tuss', 'codigoProcedimento',
+                    "Código {$code} não existe na Tabela 22 do TUSS. A operadora recusa a guia inteira na entrada.",
+                    $guide['claim_number'],
+                    amountAtRisk: (float) ($procedure['total_amount'] ?? 0),
+                );
+
+                continue;
+            }
+
+            if (! $official->wasValidOn($guide['service_date'])) {
+                $findings[] = $this->finding(
+                    'error', 'tuss', 'codigoProcedimento',
+                    sprintf(
+                        'Código %s não estava em vigência na data do atendimento (vigente de %s%s).',
+                        $code,
+                        $official->valid_from ? $official->valid_from->format('d/m/Y') : 'início não informado',
+                        $official->valid_until ? ' até '.$official->valid_until->format('d/m/Y') : '',
+                    ),
+                    $guide['claim_number'],
+                    amountAtRisk: (float) ($procedure['total_amount'] ?? 0),
+                );
+            }
+        }
+
+        return $findings;
+    }
+
+    /**
      * Histórico desta clínica por código de procedimento: quantas vezes foi
      * faturado, quantas foram glosadas e por qual motivo.
      * É a parte que nenhum validador genérico de TISS consegue fazer.
@@ -270,7 +333,6 @@ class PreventiveValidator
     public function unavailableRules(): array
     {
         return [
-            ['rule' => 'Código TUSS/CBHPM válido', 'reason' => 'A Tabela 22 do TUSS é publicação separada e não está entre os insumos do projeto.'],
             ['rule' => 'Período de carência', 'reason' => 'Depende da data de adesão do beneficiário ao plano, que o sistema não recebe.'],
             ['rule' => 'Assinatura do paciente', 'reason' => 'Não é um campo do XML TISS — só existe na via física da guia.'],
             ['rule' => 'Regras contratuais por convênio', 'reason' => 'A coluna `clinic_payers.config` existe e ainda está sem uso.'],
@@ -280,6 +342,8 @@ class PreventiveValidator
     public function activeRules(): array
     {
         return [
+            'Código existente na Tabela 22 do TUSS (5.967 procedimentos)',
+            'Código em vigência na data do atendimento',
             'Campos obrigatórios da guia (número, beneficiário, carteira, data)',
             'Data de atendimento no futuro',
             'Guia com número já registrado nesta clínica',

@@ -3,10 +3,12 @@
 use App\Services\Preventive\GuideInspector;
 use App\Services\Preventive\PreventiveValidator;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\DB;
 
 uses(RefreshDatabase::class);
 
 beforeEach(function () {
+    seedTuss();
     $this->clinic = makeClinic();
     $this->actingAs(makeUser($this->clinic));
 });
@@ -44,8 +46,8 @@ function guideXml(string $inner, string $total = '100.00'): string
 }
 
 const OK_PROCEDURE = '<ans:procedimentoExecutado>
-    <ans:codigoProcedimento>81000450</ans:codigoProcedimento>
-    <ans:descricaoProcedimento>Profilaxia</ans:descricaoProcedimento>
+    <ans:codigoProcedimento>84000198</ans:codigoProcedimento>
+    <ans:descricaoProcedimento>Profilaxia: polimento coronário</ans:descricaoProcedimento>
     <ans:cboProfissional>223208</ans:cboProfissional>
     <ans:quantidadeExecutada>1</ans:quantidadeExecutada>
     <ans:valorUnitario>100.00</ans:valorUnitario>
@@ -117,7 +119,7 @@ it('acusa quantidade x unitário que não fecha com o total do item', function (
     $xml = guideXml(str_replace('<ans:quantidadeExecutada>1<', '<ans:quantidadeExecutada>3<', OK_PROCEDURE));
 
     expect(messages(analyze($xml), 'aritmetica'))
-        ->toContain('Procedimento 81000450: 3 × R$ 100,00 não fecha com o total de R$ 100,00.');
+        ->toContain('Procedimento 84000198: 3 × R$ 100,00 não fecha com o total de R$ 100,00.');
 });
 
 it('acusa soma dos procedimentos diferente do total da guia', function () {
@@ -146,7 +148,7 @@ it('avisa quando o procedimento tem histórico de glosa nesta clínica', functio
     makeDenial($this->clinic, ['amount' => 180, 'reason_code' => '1402',
         'reason_description' => 'Procedimento não autorizado']);
 
-    $xml = guideXml(str_replace('81000450', '81000234', OK_PROCEDURE));
+    $xml = guideXml(str_replace('84000198', '85100200', OK_PROCEDURE));
     $mensagens = messages(analyze($xml), 'historico');
 
     expect($mensagens)->toHaveCount(1)
@@ -171,7 +173,7 @@ it('não avisa quando a taxa de glosa é baixa — evita fadiga de alerta', func
         ]);
     }
 
-    $xml = guideXml(str_replace('81000450', $item->procedure_code, OK_PROCEDURE));
+    $xml = guideXml(str_replace('84000198', $item->procedure_code, OK_PROCEDURE));
 
     expect(messages(analyze($xml), 'historico'))->toBeEmpty();
 });
@@ -181,7 +183,7 @@ it('não enxerga o histórico de outra clínica', function () {
     makeDenial($outra, ['amount' => 180, 'reason_code' => '1402']);
     makeDenial($outra, ['amount' => 180, 'reason_code' => '1402']);
 
-    $xml = guideXml(str_replace('81000450', '81000234', OK_PROCEDURE));
+    $xml = guideXml(str_replace('84000198', '85100200', OK_PROCEDURE));
 
     expect(messages(analyze($xml), 'historico'))->toBeEmpty();
 });
@@ -197,7 +199,7 @@ it('produz na fixture exatamente os problemas que ela documenta', function () {
     $r = analyze(fixtureXml());
 
     expect($r['guide_count'])->toBe(4)
-        ->and($r['error_count'])->toBe(5)
+        ->and($r['error_count'])->toBe(5)  // nenhum de TUSS: todos os códigos da fixture são reais
         ->and(messages($r, 'estrutura', 'error'))->toContain('Nome do beneficiário ausente.')
         ->and(messages($r, 'aritmetica'))->toHaveCount(2);
 });
@@ -207,7 +209,8 @@ it('expõe as regras ativas e as que ainda não existem, com o motivo', function
 
     expect($r['active'])->not->toBeEmpty()
         ->and($r['unavailable'])->not->toBeEmpty()
-        ->and(collect($r['unavailable'])->pluck('rule'))->toContain('Código TUSS/CBHPM válido')
+        ->and(collect($r['active']))->toContain('Código existente na Tabela 22 do TUSS (5.967 procedimentos)')
+        ->and(collect($r['unavailable'])->pluck('rule'))->toContain('Período de carência')
         ->and(collect($r['unavailable'])->every(fn ($u) => filled($u['reason'])))->toBeTrue();
 });
 
@@ -223,4 +226,37 @@ it('deixa o viewer analisar — é leitura, não escreve nada', function () {
         ->postJson('/api/preventive/validate', ['xml' => guideXml(OK_PROCEDURE)])
         ->assertOk()
         ->assertJsonPath('error_count', 0);
+});
+
+it('acusa código que não existe na Tabela 22', function () {
+    $xml = guideXml(str_replace('84000198', '99999999', OK_PROCEDURE));
+    $achados = messages(analyze($xml), 'tuss', 'error');
+
+    expect($achados)->toHaveCount(1)
+        ->and($achados[0])->toContain('99999999 não existe na Tabela 22 do TUSS');
+});
+
+it('acusa código fora de vigência na data do atendimento', function () {
+    App\Models\TussProcedure::where('code', '84000198')->update(['valid_from' => '2026-09-05']);
+
+    // a guia é de 2026-09-01, anterior ao início da vigência
+    expect(messages(analyze(guideXml(OK_PROCEDURE)), 'tuss', 'error')[0])
+        ->toContain('não estava em vigência na data do atendimento (vigente de 05/09/2026)');
+});
+
+it('aceita código vigente na data, mesmo que recente', function () {
+    App\Models\TussProcedure::where('code', '84000198')->update(['valid_from' => '2026-08-01']);
+
+    expect(messages(analyze(guideXml(OK_PROCEDURE)), 'tuss'))->toBeEmpty();
+});
+
+it('consulta a Tabela 22 uma vez só, não uma por procedimento', function () {
+    $doisItens = OK_PROCEDURE.str_replace('84000198', '85100200', OK_PROCEDURE);
+
+    DB::enableQueryLog();
+    analyze(guideXml($doisItens, total: '200.00'));
+    $consultas = collect(DB::getQueryLog())->filter(fn ($q) => str_contains($q['query'], 'tuss_procedures'));
+    DB::disableQueryLog();
+
+    expect($consultas)->toHaveCount(1);
 });

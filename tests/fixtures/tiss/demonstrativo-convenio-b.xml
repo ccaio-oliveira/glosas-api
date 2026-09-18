@@ -5,6 +5,7 @@
   os filtros por convênio nas telas de Glosas passam a fazer sentido.
 
   Resultado esperado: 2 guias · 3 itens · 2 glosas · R$ 1.130,00 glosados.
+  Códigos de procedimento reais (Tabela 22 do TUSS).
 -->
 <ans:mensagemTISS xmlns:ans="http://www.ans.gov.br/padroes/tiss/schemas">
   <ans:cabecalho>
@@ -34,7 +35,7 @@
           <ans:nomeBeneficiario>Camila Duarte Freitas</ans:nomeBeneficiario>
         </ans:dadosBeneficiario>
         <ans:dadosProcedimento>
-          <ans:codigoProcedimento>81001560</ans:codigoProcedimento>
+          <ans:codigoProcedimento>85400220</ans:codigoProcedimento>
           <ans:descricaoProcedimento>Núcleo metálico fundido</ans:descricaoProcedimento>
           <ans:denteRegiao>11</ans:denteRegiao>
           <ans:cboProfissional>223208</ans:cboProfissional>
@@ -45,7 +46,7 @@
           <ans:codigoGlosa>3009</ans:codigoGlosa>
         </ans:dadosProcedimento>
         <ans:dadosProcedimento>
-          <ans:codigoProcedimento>81000112</ans:codigoProcedimento>
+          <ans:codigoProcedimento>81000421</ans:codigoProcedimento>
           <ans:descricaoProcedimento>Radiografia periapical</ans:descricaoProcedimento>
           <ans:denteRegiao>11</ans:denteRegiao>
           <ans:cboProfissional>223208</ans:cboProfissional>
@@ -67,8 +68,8 @@
           <ans:nomeBeneficiario>Sérgio Antunes Moreira</ans:nomeBeneficiario>
         </ans:dadosBeneficiario>
         <ans:dadosProcedimento>
-          <ans:codigoProcedimento>81000450</ans:codigoProcedimento>
-          <ans:descricaoProcedimento>Profilaxia - polimento coronário</ans:descricaoProcedimento>
+          <ans:codigoProcedimento>84000198</ans:codigoProcedimento>
+          <ans:descricaoProcedimento>Profilaxia: polimento coronário</ans:descricaoProcedimento>
           <ans:cboProfissional>223208</ans:cboProfissional>
           <ans:valorInformado>240.00</ans:valorInformado>
           <ans:valorProcessado>240.00</ans:valorProcessado>

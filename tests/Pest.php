@@ -54,6 +54,40 @@ expect()->extend('toBeOne', function () {
 |
 */
 
+/**
+ * Semeia códigos da Tabela 22 sob demanda.
+ *
+ * A tabela real tem ~6 mil linhas; semear tudo em cada teste custaria caro sem
+ * ganho. Cada teste declara os códigos de que depende — sem argumento, semeia
+ * os que as fixtures usam.
+ */
+function seedTuss(array $codes = []): void
+{
+    $fromFixtures = [
+        '81000421' => 'Radiografia periapical',
+        '82000875' => 'Exodontia simples de permanente',
+        '84000090' => 'Aplicação tópica de flúor',
+        '84000198' => 'Profilaxia: polimento coronário',
+        '85100196' => 'Restauração em resina fotopolimerizável 1 face',
+        '85100200' => 'Restauração em resina fotopolimerizável 2 faces',
+        '85200158' => 'Tratamento endodôntico multirradicular',
+        '85300039' => 'Raspagem sub-gengival/alisamento radicular',
+        '85400084' => 'Coroa provisória sem pino',
+        '85400220' => 'Núcleo metálico fundido',
+    ];
+
+    $entries = $codes
+        ? collect($codes)->mapWithKeys(fn ($v, $k) => is_int($k) ? [$v => "Procedimento {$v}"] : [$k => $v])->all()
+        : $fromFixtures;
+
+    foreach ($entries as $code => $description) {
+        App\Models\TussProcedure::updateOrCreate(
+            ['code' => (string) $code],
+            ['description' => $description, 'valid_from' => '2009-02-13'],
+        );
+    }
+}
+
 function makeClinic(string $name = 'Clínica de Teste', ?string $cnpj = null): App\Models\Clinic
 {
     return App\Models\Clinic::create([
@@ -106,8 +140,8 @@ function makeDenial(
     $item = App\Models\ClaimItem::withoutGlobalScope('clinic')->create([
         'clinic_id' => $clinic->id,
         'claim_id' => $claim->id,
-        'procedure_code' => '81000234',
-        'description' => 'Restauração em resina composta',
+        'procedure_code' => $attributes['procedure_code'] ?? '85100200',
+        'description' => 'Restauração em resina fotopolimerizável 2 faces',
         'billed_amount' => $amount,
         'denied_amount' => $amount,
     ]);
