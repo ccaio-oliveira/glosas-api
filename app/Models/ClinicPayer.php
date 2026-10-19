@@ -16,6 +16,18 @@ class ClinicPayer extends Model
         return ['config' => 'array'];
     }
 
+    /**
+     * Prazo contratual para recorrer de glosa deste convênio, em dias.
+     * Vem do contrato da clínica — não existe padrão universal, então null
+     * significa "não configurado", nunca um valor presumido.
+     */
+    public function appealDeadlineDays(): ?int
+    {
+        $days = $this->config['appeal_deadline_days'] ?? null;
+
+        return is_numeric($days) && (int) $days > 0 ? (int) $days : null;
+    }
+
     public function payer()
     {
         return $this->belongsTo(Payer::class);

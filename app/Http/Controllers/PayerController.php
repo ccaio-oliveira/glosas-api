@@ -19,6 +19,7 @@ class PayerController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'ans_registry_code' => ['nullable', 'string', 'max:255'],
             'integration_type' => ['required', 'in:manual,tiss_webservice'],
+            'appeal_deadline_days' => ['nullable', 'integer', 'min:1', 'max:365'],
         ]);
 
         $payer = Payer::whereRaw('LOWER(name) = ?', [mb_strtolower($data['name'])])->first();
@@ -32,10 +33,12 @@ class PayerController extends Controller
             $payer->update(['ans_registry_code' => $data['ans_registry_code']]);
         }
 
-        $link = ClinicPayer::updateOrCreate(
+        $link = ClinicPayer::firstOrNew(
             ['clinic_id' => $request->user()->clinic_id, 'payer_id' => $payer->id],
-            ['integration_type' => $data['integration_type']],
         );
+        $link->integration_type = $data['integration_type'];
+        $this->applyConfig($link, $data);
+        $link->save();
 
         return $this->present($link->load('payer'));
     }
@@ -46,6 +49,7 @@ class PayerController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'ans_registry_code' => ['nullable', 'string', 'max:255'],
             'integration_type' => ['required', 'in:manual,tiss_webservice'],
+            'appeal_deadline_days' => ['nullable', 'integer', 'min:1', 'max:365'],
         ]);
 
         $payer = $clinicPayer->payer;
@@ -72,6 +76,7 @@ class PayerController extends Controller
         }
 
         $clinicPayer->integration_type = $data['integration_type'];
+        $this->applyConfig($clinicPayer, $data);
         $clinicPayer->save();
 
         return $this->present($clinicPayer->load('payer'));
@@ -92,6 +97,23 @@ class PayerController extends Controller
             'name' => $link->payer->name,
             'ans_registry_code' => $link->payer->ans_registry_code,
             'integration_type' => $link->integration_type,
+            'appeal_deadline_days' => $link->appealDeadlineDays(),
         ];
+    }
+
+    /**
+     * Regras por convênio ficam em `clinic_payers.config` — é do vínculo da
+     * clínica com o convênio, não do convênio global: cada contrato é um.
+     * Mescla em vez de sobrescrever, para regras futuras não se apagarem.
+     */
+    private function applyConfig(ClinicPayer $link, array $data): void
+    {
+        if (! array_key_exists('appeal_deadline_days', $data)) {
+            return;
+        }
+
+        $config = $link->config ?? [];
+        $config['appeal_deadline_days'] = $data['appeal_deadline_days'] ?: null;
+        $link->config = $config;
     }
 }

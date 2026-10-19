@@ -7,6 +7,7 @@ use App\Models\AuditLog;
 use App\Models\ClaimItem;
 use App\Models\Denial;
 use App\Models\TussProcedure;
+use App\Services\Denials\AppealDeadline;
 use App\Support\StatusLabels;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,6 +15,14 @@ use Illuminate\Support\Str;
 
 class DenialController extends Controller
 {
+    /** Carrega os prazos da clínica uma vez por requisição, não uma por glosa. */
+    private ?AppealDeadline $deadlines = null;
+
+    private function deadlines(): AppealDeadline
+    {
+        return $this->deadlines ??= new AppealDeadline();
+    }
+
     public function index(Request $request)
     {
         $query = Denial::with('claimItem.claim.payer');
@@ -45,7 +54,16 @@ class DenialController extends Controller
             }
         }
 
-        return $query->latest('identified_at')->get()->map(fn (Denial $d) => $this->present($d));
+        $denials = $query->latest('identified_at')->get()->map(fn (Denial $d) => $this->present($d));
+
+        // Prazo é calculado, não coluna: o filtro roda depois do cálculo.
+        // "due_soon" inclui as vencidas — é a lista do que exige ação agora.
+        if ($deadline = $request->query('deadline')) {
+            $wanted = $deadline === 'due_soon' ? ['due_soon', 'overdue'] : [$deadline];
+            $denials = $denials->filter(fn (array $d) => in_array($d['deadline']['status'], $wanted, true))->values();
+        }
+
+        return $denials;
     }
 
     public function show(Denial $denial)
@@ -116,7 +134,16 @@ class DenialController extends Controller
     {
         $open = Denial::whereIn('status', ['new', 'pending', 'appealed'])->get();
 
+        $deadlines = Denial::with('claimItem.claim')->whereIn('status', ['new', 'pending'])->get()
+            ->map(fn (Denial $d) => $this->deadlines()->for($d));
+
+        $overdue = $deadlines->where('status', 'overdue');
+        $dueSoon = $deadlines->where('status', 'due_soon');
+
         return [
+            'due_soon_count' => $dueSoon->count(),
+            'overdue_count' => $overdue->count(),
+            'deadline_not_configured_count' => $deadlines->where('status', 'not_configured')->count(),
             'open_count' => $open->count(),
             'open_amount' => (float) $open->sum('amount'),
             'recovered_amount' => (float) Denial::where('status', 'recovered')->sum('amount'),
@@ -168,6 +195,7 @@ class DenialController extends Controller
             'status' => $denial->status,
             'needs_ai_review' => $denial->needs_ai_review,
             'identified_at' => $denial->identified_at?->toDateString(),
+            'deadline' => $this->deadlines()->for($denial),
         ];
     }
 }
