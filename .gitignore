@@ -25,3 +25,7 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# E2E (Playwright): storage descartável. O banco já cai em database/.gitignore;
+# .env.e2e é versionado de propósito.
+/storage/e2e
