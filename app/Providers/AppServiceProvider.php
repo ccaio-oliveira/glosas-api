@@ -25,8 +25,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::before(fn (User $user) => $user->isSuperAdmin() ? true : null);
-
+        // Sem Gate::before para o super_admin (achado M6): ele não opera clínica.
+        // O painel dele é protegido pelo middleware `super_admin`, não por Gate.
         Gate::define('operate', fn (User $user) => $user->canOperate());
         Gate::define('manage-clinic', fn (User $user) => $user->isOwner());
         Gate::define('manage-users', fn (User $user) => $user->isOwner());

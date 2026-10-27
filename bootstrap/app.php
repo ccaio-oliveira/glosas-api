@@ -15,7 +15,14 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->statefulApi();
         $middleware->alias([
             'super_admin' => \App\Http\Middleware\EnsureSuperAdmin::class,
+            'clinic' => \App\Http\Middleware\EnsureClinicMember::class,
         ]);
+        // Antes do route model binding: o super_admin leva 403 sem nem consultar o
+        // registro, em vez de um 404 que dependeria do scope.
+        $middleware->prependToPriorityList(
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\EnsureClinicMember::class,
+        );
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->report(function (\Throwable $e) {

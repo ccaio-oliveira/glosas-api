@@ -19,7 +19,19 @@ Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:lo
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/user', [AuthController::class, 'me']);
+});
 
+// ---- Painel do operador da SaaS: só super_admin ----
+Route::middleware(['auth:sanctum', 'super_admin'])->prefix('admin')->group(function () {
+    Route::get('/error-logs/summary', [ErrorLogController::class, 'summary']);
+    Route::get('/error-logs', [ErrorLogController::class, 'index']);
+    Route::post('error-logs/resolve-group', [ErrorLogController::class, 'resolveGroup']);
+    Route::post('/error-logs/{errorLog}/resolve', [ErrorLogController::class, 'resolve']);
+    Route::post('/error-logs/{errorLog}/unresolve', [ErrorLogController::class, 'unresolve']);
+});
+
+// ---- Rotas da clínica: só quem pertence a uma (super_admin recebe 403, achado M6) ----
+Route::middleware(['auth:sanctum', 'clinic'])->group(function () {
     // ---- Leitura: qualquer usuário da clínica ----
     Route::get('/clinic', [ClinicController::class, 'show']);
     Route::get('/users', [UserController::class, 'index']);
@@ -70,13 +82,5 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/users', [UserController::class, 'store']);
         Route::put('/users/{user}', [UserController::class, 'update']);
         Route::delete('/users/{user}', [UserController::class, 'destroy']);
-    });
-
-    Route::middleware(['auth:sanctum', 'super_admin'])->prefix('admin')->group(function () {
-        Route::get('/error-logs/summary', [ErrorLogController::class, 'summary']);
-        Route::get('/error-logs', [ErrorLogController::class, 'index']);
-        Route::post('error-logs/resolve-group', [ErrorLogController::class, 'resolveGroup']);
-        Route::post('/error-logs/{errorLog}/resolve', [ErrorLogController::class, 'resolve']);
-        Route::post('/error-logs/{errorLog}/unresolve', [ErrorLogController::class, 'unresolve']);
     });
 });
