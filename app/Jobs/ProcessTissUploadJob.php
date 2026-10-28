@@ -78,7 +78,9 @@ class ProcessTissUploadJob implements ShouldQueue
                                 'amount' => $parsedItem['denied_amount'],
                                 'status' => 'new',
                                 'needs_ai_review' => $classification['needs_ai_review'],
-                                'identified_at' => now()->toDateString(),
+                                // Dia no fuso da clínica, não em UTC: é o dia em que o
+                                // prazo de recurso começa a correr (ver AppealDeadline).
+                                'identified_at' => now(config('app.business_timezone'))->toDateString(),
                             ]);
 
                             $denialsCount++;

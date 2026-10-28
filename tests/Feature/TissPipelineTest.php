@@ -183,8 +183,9 @@ it('usa a data do processamento como identified_at', function () {
 
     // ATENÇÃO: é a data do upload, não a do atendimento. A fixture tem
     // atendimentos de julho, mas todas as glosas caem em hoje. Ver docs/estado-atual.md.
+    // "Hoje" no fuso de negócio, não em UTC — é o dia que conta para o prazo.
     expect($datas)->toHaveCount(1)
-        ->and($datas->first()->toDateString())->toBe(now()->toDateString());
+        ->and($datas->first()->toDateString())->toBe(now(config('app.business_timezone'))->toDateString());
 });
 
 it('extrai a data de atendimento de cada guia do XML', function () {

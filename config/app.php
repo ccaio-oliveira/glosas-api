@@ -68,6 +68,14 @@ return [
     'timezone' => 'UTC',
 
     /*
+    | Fuso em que a clínica vive o dia. O banco e o relógio da aplicação ficam
+    | em UTC; este fuso só decide "que dia é hoje" para regras de negócio por
+    | data, como a contagem do prazo de recurso e a data de identificação da
+    | glosa. Sem ele, depois das 21h em São Paulo o sistema já contaria amanhã.
+    */
+    'business_timezone' => env('APP_BUSINESS_TIMEZONE', 'America/Sao_Paulo'),
+
+    /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
     |--------------------------------------------------------------------------

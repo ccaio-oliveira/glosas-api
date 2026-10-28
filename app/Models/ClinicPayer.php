@@ -28,6 +28,22 @@ class ClinicPayer extends Model
         return is_numeric($days) && (int) $days > 0 ? (int) $days : null;
     }
 
+    /**
+     * De onde a clínica tirou o prazo (contrato, cláusula, aditivo). Texto livre
+     * digitado por quem cadastrou — o sistema não valida nem sugere a fonte.
+     * Sem prazo válido, a fonte não descreve nada e volta null.
+     */
+    public function appealDeadlineSource(): ?string
+    {
+        if ($this->appealDeadlineDays() === null) {
+            return null;
+        }
+
+        $source = $this->config['appeal_deadline_source'] ?? null;
+
+        return is_string($source) && trim($source) !== '' ? $source : null;
+    }
+
     public function payer()
     {
         return $this->belongsTo(Payer::class);

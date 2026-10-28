@@ -15,7 +15,7 @@ use Illuminate\Support\Str;
 
 class DenialController extends Controller
 {
-    /** Carrega os prazos da clínica uma vez por requisição, não uma por glosa. */
+    /** Carrega os prazos de cada clínica uma vez por requisição, não uma por glosa. */
     private ?AppealDeadline $deadlines = null;
 
     private function deadlines(): AppealDeadline
@@ -25,6 +25,12 @@ class DenialController extends Controller
 
     public function index(Request $request)
     {
+        // Valor desconhecido daria lista vazia em silêncio — melhor recusar.
+        $request->validate(
+            ['deadline' => ['nullable', 'in:due_soon,overdue,on_track,not_configured,not_applicable']],
+            ['deadline.in' => 'Filtro de prazo inválido.'],
+        );
+
         $query = Denial::with('claimItem.claim.payer');
 
         if ($status = $request->query('status')) {

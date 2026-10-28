@@ -130,9 +130,14 @@ it('salva e devolve o prazo no cadastro do convênio, sem apagar o resto do conf
         'name' => 'Convênio Teste',
         'integration_type' => 'manual',
         'appeal_deadline_days' => 45,
+        'appeal_deadline_source' => 'Contrato 2026, cláusula 7',
     ])->assertOk()->assertJsonPath('appeal_deadline_days', 45);
 
-    expect($link->fresh()->config)->toBe(['outra_regra' => true, 'appeal_deadline_days' => 45]);
+    expect($link->fresh()->config)->toMatchArray([
+        'outra_regra' => true,
+        'appeal_deadline_days' => 45,
+        'appeal_deadline_source' => 'Contrato 2026, cláusula 7',
+    ]);
 });
 
 it('limpa o prazo quando o campo vem vazio', function () {
@@ -153,3 +158,63 @@ it('recusa prazo fora de 1 a 365 dias', function (int $dias) {
         'name' => 'Convênio Teste', 'integration_type' => 'manual', 'appeal_deadline_days' => $dias,
     ])->assertStatus(422)->assertJsonValidationErrors('appeal_deadline_days');
 })->with([0, -5, 400]);
+
+it('expõe a fonte do prazo no detalhe da glosa, independente do status', function (string $status) {
+    $d = makeDenial($this->clinic, ['identified_at' => '2026-09-01', 'status' => $status]);
+    $link = ClinicPayer::withoutGlobalScope('clinic')->where('clinic_id', $this->clinic->id)->first();
+    $link->update(['config' => ['appeal_deadline_days' => 30, 'appeal_deadline_source' => 'Contrato, cláusula 4']]);
+
+    expect(deadlineOf($d->id))->toMatchArray(['deadline_days' => 30, 'deadline_source' => 'Contrato, cláusula 4']);
+})->with(['new', 'recovered']);
+
+it('devolve fonte nula quando o convênio não tem prazo', function () {
+    $d = makeDenial($this->clinic, ['identified_at' => '2026-09-01']);
+
+    expect(deadlineOf($d->id))->toMatchArray(['status' => 'not_configured', 'deadline_source' => null]);
+});
+
+it('recusa filtro de prazo desconhecido', function () {
+    makeDenial($this->clinic);
+
+    $this->getJson('/api/denials?deadline=foo')->assertStatus(422)->assertJsonValidationErrors('deadline');
+    $this->getJson('/api/denials?deadline=')->assertOk();
+    $this->getJson('/api/denials?deadline=not_configured')->assertOk()->assertJsonCount(1);
+});
+
+it('conta o dia pelo fuso de negócio, não por UTC', function () {
+    // 23h30 em São Paulo de 18/09 já é 02h30 de 19/09 em UTC.
+    Carbon::setTestNow(Carbon::parse('2026-09-18 23:30:00', 'America/Sao_Paulo'));
+
+    $d = makeDenial($this->clinic, ['identified_at' => '2026-08-19']);
+    setDeadline($this->clinic, 30); // vence 18/09 = ainda hoje em São Paulo
+
+    expect(deadlineOf($d->id))->toMatchArray(['status' => 'due_soon', 'due_date' => '2026-09-18', 'days_left' => 0]);
+});
+
+it('usa o prazo da clínica de cada glosa mesmo sem clínica no contexto (super_admin)', function () {
+    $outra = makeClinic('Outra');
+    $minha = makeDenial($this->clinic, ['identified_at' => '2026-09-01']);
+    $dela = makeDenial($outra, ['identified_at' => '2026-09-01']); // mesmo Payer
+    setDeadline($this->clinic, 10);
+    setDeadline($outra, 60);
+
+    // O super_admin não alcança /denials (403, achado M6); o caso cross-tenant
+    // real é serviço chamado fora do scope. Antes, o índice por payer_id puro
+    // fazia a segunda clínica sobrescrever o prazo da primeira.
+    $this->actingAs(App\Models\User::create([
+        'clinic_id' => null, 'name' => 'Operador', 'email' => 'admin@glosasai.test',
+        'password' => bcrypt('password'), 'role' => 'super_admin',
+    ]));
+
+    $denials = App\Models\Denial::withoutGlobalScope('clinic')
+        ->with([
+            'claimItem' => fn ($q) => $q->withoutGlobalScope('clinic'),
+            'claimItem.claim' => fn ($q) => $q->withoutGlobalScope('clinic'),
+        ])
+        ->get()->keyBy('id');
+
+    $service = new App\Services\Denials\AppealDeadline();
+
+    expect($service->for($denials[$minha->id]))->toMatchArray(['deadline_days' => 10, 'status' => 'overdue'])
+        ->and($service->for($denials[$dela->id]))->toMatchArray(['deadline_days' => 60, 'status' => 'on_track']);
+});
